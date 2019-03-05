@@ -1,0 +1,16 @@
+.label,.label-m{
+    text-align:right;
+    font-weight:bold;
+}
+.label-m{
+    vertical-align:middle !important;    
+}
+.resaltar{
+    font-weight:bold;
+}
+.der{
+    text-align:right;    
+}
+.middle{
+    vertical-align:middle !important;    
+}
