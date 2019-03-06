@@ -2,7 +2,7 @@
 session_start();
 
 if(!empty($_POST)){
-
+	include_once("../configuracion.php");
 	include_once("../class/cliente.php");
 	include_once("../class/logusuario.php");
 	include_once("../class/usuario.php");
@@ -19,8 +19,8 @@ if(!empty($_POST)){
 		$u=explode($directory,$_POST['u']);
 		$direccion="../".$u[1];
 	}
-
-
+//echo $direccion;
+//exit();
 	if(isset($_POST['usuario'],$_POST['pass']) && $_POST['usuario']!="" && $_POST['pass']!=""){
 
 		$usuario=$cliente->escapar($_POST['usuario']);
@@ -76,8 +76,8 @@ if(!empty($_POST)){
 			$logusuario->insertarRegistro($valuesLog,0);
 			$_SESSION['CodUsuarioLog']=$CodUsuario;
 			$_SESSION['LoginSistemaRie']=1;
-			$_SESSION['Nivel']=$NivelAcceso;
-			$_SESSION['Nivel']=$NivelAcceso;
+			$_SESSION['NivelAcceso']=$NivelAcceso;
+			$_SESSION['CodSucursal']=$CodSucursal;
             $_SESSION['Clasificacion']=$Clasificacion;
 			//echo $logusuario->optimizarTablas();
 			// echo $direccion;
