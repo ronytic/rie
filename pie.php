@@ -4,7 +4,7 @@
                     Sistema Desarrollado por: <a href="http://fb.com/ronaldnina" target="_blank" title="Cel: (591)-73230568"><strong>Ronald Nina Layme</strong></a>.
                 </div>
                 <div>
-                    <strong>Todos los Derechos Reservados</strong> Sistema de Administración Contable Plus &copy; 2015 - <?php echo date("Y")?>
+                    <strong>Todos los Derechos Reservados</strong>  &copy; <?=date("Y")!="2019"?'2019':'';?> <?php echo date("Y")?>
                 </div>
             </div>
 
