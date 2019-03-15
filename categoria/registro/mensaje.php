@@ -2,7 +2,7 @@
 include_once("../../login/check.php");
 $CodDiario=isset($_GET['Cod'])?$_GET['Cod']:'';
 $url="reporte.php?Cod=".$CodDiario;
-$titulo="Registro de Sucursal";
+$titulo="Registro de Categoria";
 $folder="../../";
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
