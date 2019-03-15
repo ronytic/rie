@@ -6,7 +6,7 @@ $Nombre=$_POST['Nombre'];
 
 include_once("../../class/categoria.php");
 $categoria=new categoria;
-$cat=$categoria->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"",1);
+$cat=$categoria->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Nombre",1);
 //print_r($di);
 
 
