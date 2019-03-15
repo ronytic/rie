@@ -50,7 +50,7 @@ $submenu=new submenu;
     <meta name="description" content="Sistema de Administración de Red Internacional Empresarial">
     <meta name="keywords" content="Sistema de Administración de Red Internacional Empresarial, RIE">
 
-    <title>RIE >></title>
+    <title>RIE</title>
     <link rel="icon" href="<?php echo $folder?>imagenes/favicon.ico" type="image/x-icon" />
     <link href="<?php echo $folder?>css/core/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $folder?>css/core/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -62,3 +62,4 @@ $submenu=new submenu;
 
 
     <script src="<?php echo $folder?>js/core/jquery-2.1.1.js"></script>
+    <script src="<?php echo $folder?>js/plugins/swal/sweetalert.min.js"></script>
