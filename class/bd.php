@@ -123,7 +123,7 @@ class bd{
 		else
 			$query ="INSERT INTO {$nombretabla} ($campos) VALUES ($datos)";
 
-		//echo $query."<br>";
+		echo $query."<br>";
 		//echo "NO ESTA HABILITADO EL REGISTRO";
 		return mysqli_query($this->l,$query);
 	}
@@ -207,7 +207,7 @@ class bd{
 			$fecha=date("Y-m-d");
 			$hora=date("H:i:s");
 			$CodUsuario=$_SESSION['CodUsuarioLog'];
-			$Nivel=$_SESSION['Nivel'];
+			$Nivel=$_SESSION['NivelAcceso'];
 
 			if(!isset($Values['Nivel'])&& empty($Values['Nivel'])){
 				$Values['Nivel']="$Nivel";
