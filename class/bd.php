@@ -123,7 +123,7 @@ class bd{
 		else
 			$query ="INSERT INTO {$nombretabla} ($campos) VALUES ($datos)";
 
-		echo $query."<br>";
+		// echo $query."<br>";
 		//echo "NO ESTA HABILITADO EL REGISTRO";
 		return mysqli_query($this->l,$query);
 	}
