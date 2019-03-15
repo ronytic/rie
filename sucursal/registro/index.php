@@ -7,7 +7,7 @@ $folder="../../";
 <?php require_once($folder."cabecerahtml.php");?>
 <?php require_once($folder."cabecera.php");?>
 <div class="panel">
-    <div class="panel-heading"><h3>Registro</h3></div>
+    <div class="panel-heading"><h3></h3></div>
     <div class="panel-body">
         <form action="guardar.php" method="post">
             <table class="table">
