@@ -6,7 +6,7 @@ $Nombre=$_POST['Nombre'];
 
 include_once("../../class/sucursal.php");
 $sucursal=new sucursal;
-$su=$sucursal->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"",1);
+$su=$sucursal->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Nombre",1);
 //print_r($di);
 
 
