@@ -1,5 +1,5 @@
 <?php
-function campo($nombre,$tipo="text",$valores="",$clase="",$required=0,$placeholder="",$autofocus=0,$adicional=array(),$valorseleccion=NULL){
+function campo($nombre,$tipo="text",$valores="",$clase="",$required=0,$placeholder="",$autofocus=0,$adicional=array(),$valorseleccion=NULL,$seleccionar=0){
 	global $idioma;
 	if($tipo=="" && empty($tipo)){$tipo="text";}
 	if(empty($adicional) && $adicional==""){$adicional=array();}
@@ -11,7 +11,8 @@ function campo($nombre,$tipo="text",$valores="",$clase="",$required=0,$placehold
 
 		case "select":{
 			?>
-        	<select id="<?php echo $nombre;?>" name="<?php echo $nombre;?>" <?php echo $autofocus==1?'autofocus':'';?><?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> class="<?php echo $clase;?>" <?php echo $required==1?'required="required"':'';?> placeholder="<?php echo $placeholder;?>"><?php  if(empty($valorseleccion) && $required==0){?><option value="" selected="selected" ><?php echo 'Seleccionar';?></option><?php }?>
+        	<select id="<?php echo $nombre;?>" name="<?php echo $nombre;?>" <?php echo $autofocus==1?'autofocus':'';?><?php foreach($adicional as $k=>$v){echo ' '.$k.'="'.$v.'"';}?> class="<?php echo $clase;?>" <?php echo $required==1?'required="required"':'';?> placeholder="<?php echo $placeholder;?>">
+			  <?php  if($seleccionar==1){?><option value="" selected="selected" ><?php echo 'Seleccionar';?></option><?php }?>
             	<?php if(count($valores)>0){foreach($valores as $k=>$v){?><option value="<?php echo $k;?>" <?php echo (string)$valorseleccion==(string)$k?'selected':'';?>><?php echo $v;?></option><?php }	}?>
             </select>
 			<?php }break;
@@ -555,5 +556,12 @@ function cambiopalabra($numero){
 }
 function num($numero,$cantidad=2){
 	return number_format($numero,$cantidad);
+}
+function array_unshift_assoc(&$arr, $key, $val)
+{
+    $arr = array_reverse($arr, true);
+    $arr[$key] = $val;
+    $arr = array_reverse($arr, true);
+    return $arr;
 }
 ?>
