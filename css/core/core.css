@@ -3,14 +3,23 @@
     font-weight:bold;
 }
 .label-m{
-    vertical-align:middle !important;    
+    vertical-align:middle !important;
 }
 .resaltar{
     font-weight:bold;
 }
 .der{
-    text-align:right;    
+    text-align:right;
 }
 .middle{
-    vertical-align:middle !important;    
+    vertical-align:middle !important;
+}
+.centrarbloque{
+    background: transparent;
+}
+.centrarbloque > *{
+    margin: 0px auto;
+}
+.table{
+    margin-bottom: 2px !important;
 }
