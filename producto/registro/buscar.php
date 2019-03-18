@@ -23,7 +23,7 @@ $marca=new marca;
 	<thead>
     	<tr>
         	<th width="10">N</th>
-        	<th width="100">Nombre</th>
+        	<th width="100">Datos</th>
 
 			<th width="100">Precios de Venta</th>
         	<th width="100">Detalles</th>
