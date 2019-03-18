@@ -13,9 +13,11 @@ if(isset($_POST)){
     $PrecioVentaMayor=$_POST['PrecioVentaMayor'];
     $PrecioVentaEspecial=$_POST['PrecioVentaEspecial'];
 
-    if($_FILES['Foto']['name']!=""){
+    if(isset($_FILES['Foto']['name'])){
+        if($_FILES['Foto']['name']!=""){
         $Foto=date("Ymd_His").$_FILES['Foto']['name'];
         @copy($_FILES['Foto']['tmp_name'],"../../imagenes/productos/".$Foto);
+        }
     }
     else{
         $Foto="";
