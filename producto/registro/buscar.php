@@ -116,7 +116,16 @@ $marca=new marca;
 						</tr>
 						<tr>
 							<td class="der resaltar">Foto: </td>
-							<td><a href="../../imagenes/productos/<?php echo $d['Foto']?>" class="btn btn-info btn-xs" target="_blank"> <i class="fa fa-image"></i></a></td>
+							<td>
+								<?php
+								$url="../../imagenes/productos/".$d['Foto'];
+								if(file_exists($url)){
+									?>
+									<a href="<?=$url;?>" class="btn btn-info btn-xs" target="_blank"> <i class="fa fa-image"></i></a>
+									<?php
+								}
+								?>
+							</td>
 						</tr>
 					</table>
 				</td>
