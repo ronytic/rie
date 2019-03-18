@@ -13,7 +13,7 @@ if(isset($_POST)){
     $sucursal=new sucursal;
     $res=$sucursal->actualizarRegistro($valores,"CodSucursal=$Cod");
     if($res){
-        $mensaje[]="La Sucursal fue modifico correctamente";
+        $mensaje[]="La Sucursal fue modificó correctamente";
         $tipomensaje="success";
     }else{
         $mensaje[]="Error al Modificar la Sucursal";
