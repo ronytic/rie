@@ -30,10 +30,12 @@ if(isset($_POST)){
                     "CodCategoria"=>"'$CodCategoria'",
                     "CodMarca"=>"'$CodMarca'",
                     );
-    if($_FILES['Foto']['name']!=""){
+    if(isset($_FILES['Foto']['name'])){
+        if($_FILES['Foto']['name']!=""){
         $Foto=date("Ymd_His").$_FILES['Foto']['name'];
         @copy($_FILES['Foto']['tmp_name'],"../../imagenes/productos/".$Foto);
         $valores['Foto']="'$Foto'";
+        }
     }
     else{
         $Foto="";
@@ -42,7 +44,7 @@ if(isset($_POST)){
     $producto=new producto;
     $res=$producto->actualizarRegistro($valores,"CodProducto=$Cod");
     if($res){
-        $mensaje[]="La producto fue modifico correctamente";
+        $mensaje[]="La producto fue modificó correctamente";
         $tipomensaje="success";
     }else{
         $mensaje[]="Error al mdificar la producto";

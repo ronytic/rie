@@ -24,7 +24,7 @@ $folder="../../";
 <div class="panel">
     <div class="panel-heading"><h3></h3></div>
     <div class="panel-body">
-        <form action="actualizar.php" method="post">
+        <form action="actualizar.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="Cod" value="<?=$Cod;?>">
             <table class="table">
                 <tr>
