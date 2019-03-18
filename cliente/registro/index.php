@@ -1,7 +1,7 @@
 <?php
 require_once("../../login/check.php");
 // print_r($_SESSION);
-
+$cla=array("unitario"=>"Unitario","mayor"=>"Mayor","especial"=>"Especial");
 $titulo="Registro de Cliente";
 $folder="../../";
 ?>
@@ -30,13 +30,7 @@ $folder="../../";
                 </tr>
                 <tr>
                     <td class="text-right middle">Clasificación</td>
-                    <td>
-                        <select name="Clasificacion" class="form-control">
-                            <option value="unitario">Unitario</option>
-                            <option value="mayor">Mayor</option>
-                            <option value="especial">Especial</option>
-                        </select>
-                    </td>
+                    <td><?=campo("Clasificacion","select",$cla,"form-control",1,"",1,array(),"",0);?></td>
                 </tr>
                 <tr>
                     <td class="text-right middle">Dirección</td>

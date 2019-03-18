@@ -8,9 +8,11 @@ if(isset($_POST)){
     $Clasificacion=$_POST['Clasificacion'];
     $Direccion=$_POST['Direccion'];
 
-    if($_FILES['Foto']['name']!=""){
+    if(isset($_FILES['Foto']['name'])){
+        if($_FILES['Foto']['name']!=""){
         $Foto=date("Ymd_His").$_FILES['Foto']['name'];
         @copy($_FILES['Foto']['tmp_name'],"../../imagenes/clientes/".$Foto);
+        }
     }
     else{
         $Foto="";
