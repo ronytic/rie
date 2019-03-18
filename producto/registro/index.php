@@ -21,7 +21,7 @@ $folder="../../";
         <form action="guardar.php" method="post" enctype="multipart/form-data">
             <table class="table">
                 <tr>
-                    <td class="text-right middle">Categoria</td>
+                    <td class="text-right middle" width="30%">Categoria</td>
                     <td><?=campo("CodCategoria","select",$cat,"form-control",1,"",1,array(),0,1);?></td>
                 </tr>
                 <tr>
