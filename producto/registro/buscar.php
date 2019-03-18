@@ -14,6 +14,10 @@ $su=$producto->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria' and CodMar
 //print_r($di);
 
 
+include_once("../../class/categoria.php");
+$categoria=new categoria;
+include_once("../../class/marca.php");
+$marca=new marca;
 ?>
 <table class="table table-hover table-bordered table-striped table-table-condensed">
 	<thead>
@@ -36,20 +40,42 @@ $su=$producto->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria' and CodMar
 		?>
 		<tr>
 			<td colspan="5">
-			  No Existen Registros de productos
+			  No existen registros de los productos buscados
 			</td>
 		</tr>
 	<?php
 	}
 	$i=0;
 	foreach($su as $d){$i++;
+		$c=$categoria->mostrarTodoRegistro("CodCategoria=".$d['CodCategoria']);
+		$c=array_shift($c);
+		$m=$marca->mostrarTodoRegistro("CodMarca=".$d['CodMarca']);
+		$m=array_shift($m);
         ?>
         	<tr>
             	<td><?php echo $i;?></td>
-            	<td><?php echo ($d['Nombre'])?></td>
+            	<td class="small">
+					<table class="table table-bordered">
+
+						<tr>
+							<td class="resaltar" colspan="2"><?php echo ($d['Nombre'])?></td>
+						</tr>
+						<tr>
+							<td class=" resaltar">Categoria: </td>
+							<td class=""><?php echo ($c['Nombre'])?></td>
+						</tr>
+						<tr>
+							<td class=" resaltar">Marca: </td>
+							<td class=""><?php echo ($m['Nombre'])?></td>
+						</tr>
+
+					</table>
+
+
+				</td>
 
 				<td class="small">
-				<table class="table table-bordered">
+					<table class="table table-bordered">
 
 						<tr>
 							<td class="der resaltar">Unitario: </td>
@@ -62,6 +88,10 @@ $su=$producto->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria' and CodMar
 						<tr>
 							<td class="der resaltar">Especial: </td>
 							<td class="der"><?php echo num($d['PrecioVentaEspecial'])?></td>
+						</tr>
+						<tr>
+							<td class="der resaltar">Cant. Mínima: </td>
+							<td class="der"><?php echo ($d['CantidadMinima'])?></td>
 						</tr>
 					</table>
 				</td>
