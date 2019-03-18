@@ -23,3 +23,16 @@
 .table{
     margin-bottom: 2px !important;
 }
+.logocentreadopequeno{
+    display: inline-block;
+    margin-top: 14px;
+
+}
+.logocentreadopequeno img{
+
+}
+@media (max-width: 768px) {
+    .col-xs-12.text-right, .col-xs-12.text-left {
+        text-align: center;
+    }
+}
