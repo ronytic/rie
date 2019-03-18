@@ -8,13 +8,14 @@
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
-                    <div class="dropdown profile-element"> <span>
+                    <div class="dropdown profile-element">
+                        <span>
                         <div class="row">
-                          <img alt="image" class="img-thumbnail col-lg-12" src="<?php echo $folder?>imagenes/logo/logo.jpg" />
-
+                            <a href="<?=$folder;?>">
+                                <img alt="image" class="img-thumbnail col-lg-12" src="<?php echo $folder?>imagenes/logo/logo.jpg" />
+                            </a>
                         </div>
-
-                             </span>
+                        </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $nombrecompleto?></strong>
                              </span> <span class="text-muted text-xs block"><?php echo $Cargo?> <b class="caret"></b></span> </span> </a>
@@ -27,7 +28,9 @@
                         </ul>
                     </div>
                     <div class="logo-element text-center">
-                        <img src="<?=$folder;?>imagenes/favicon.ico" class="img-thumbnail" class=" " width="60%">
+                        <a href="<?=$folder;?>">
+                            <img src="<?=$folder;?>imagenes/favicon.ico" class="img-thumbnail" class=" " width="60%">
+                        </a>
                     </div>
                 </li>
                 <li class="active"><a href="<?php echo $folder?>"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span> </a></li>
@@ -50,8 +53,11 @@
         <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
         <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
+        <div class="navbar-header pull-left">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                <a class="logocentreadopequeno hidden-lg hidden-md hidden-sm" href="<?=$folder;?>">
+                    <img alt="image" class="img-thumbnail" src="<?php echo $folder?>imagenes/logo/logo.jpg" width="100"/>
+                </a>
             <form role="search" class="navbar-form-custom" action="busqueda/">
                 <div class="form-group">
                     <input type="text" placeholder=""  class="form-control disabled" name="top-search" id="top-search" readonly>
