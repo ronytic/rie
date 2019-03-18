@@ -9,7 +9,7 @@ $folder="";
 <div class="panel">
   <div class="panel-body">
     <div class="text-center">
-      <a href="lista/" class="btn btn-primary btn-lg"> <i class="fa fa-file"></i> Ver Lista Actualizada de Productos </a>
+      <a href="lista/" class="btn btn-primary btn"> <i class="fa fa-file"></i> Ver Lista Actualizada de Productos </a>
     </div>
     <br>
     <div class="">
