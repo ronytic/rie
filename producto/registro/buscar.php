@@ -78,7 +78,7 @@ $marca=new marca;
 					<table class="table table-bordered">
 
 						<tr>
-							<td class="der resaltar">Unitario: </td>
+							<td class="der resaltar" width="60%">Unitario: </td>
 							<td class="der"><?php echo num($d['PrecioVentaUnitario'])?></td>
 						</tr>
 						<tr>
@@ -99,7 +99,7 @@ $marca=new marca;
 
 					<table class="table table-bordered">
 						<tr>
-							<td class="der resaltar">Color: </td>
+							<td class="der resaltar" width="40%">Color: </td>
 							<td><div style="width:20px;height:20px;background-color:<?php echo $d['Color']?>" ></div></td>
 						</tr>
 						<tr>
