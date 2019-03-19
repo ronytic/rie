@@ -52,7 +52,7 @@
 
         <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
-        <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header pull-left">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
                 <a class="logocentreadopequeno hidden-lg hidden-md hidden-sm" href="<?=$folder;?>">
