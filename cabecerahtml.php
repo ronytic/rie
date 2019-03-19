@@ -62,4 +62,5 @@ $submenu=new submenu;
 
 
     <script src="<?php echo $folder?>js/core/jquery-2.1.1.js"></script>
+    <script src="<?php echo $folder?>js/core/general.js"></script>
     <script src="<?php echo $folder?>js/plugins/swal/sweetalert.min.js"></script>
