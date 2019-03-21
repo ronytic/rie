@@ -44,7 +44,7 @@ if(isset($_POST)){
     $producto=new producto;
     $res=$producto->actualizarRegistro($valores,"CodProducto=$Cod");
     if($res){
-        $mensaje[]="La producto fue modificó correctamente";
+        $mensaje[]="El producto fue modificó correctamente";
         $tipomensaje="success";
     }else{
         $mensaje[]="Error al mdificar la producto";
