@@ -9,7 +9,7 @@ if(isset($_POST)){
     $marca=new marca;
     $res=$marca->actualizarRegistro($valores,"CodMarca=$Cod");
     if($res){
-        $mensaje[]="La marca fue modificó correctamente";
+        $mensaje[]="La marca fue modificado correctamente";
         $tipomensaje="success";
     }else{
         $mensaje[]="Error al modificar la marca";

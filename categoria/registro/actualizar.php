@@ -9,7 +9,7 @@ if(isset($_POST)){
     $categoria=new categoria;
     $res=$categoria->actualizarRegistro($valores,"CodCategoria=$Cod");
     if($res){
-        $mensaje[]="La categoria fue modificó correctamente";
+        $mensaje[]="La categoria fue modificado correctamente";
         $tipomensaje="success";
     }else{
         $mensaje[]="Error al modificar la categoria";
