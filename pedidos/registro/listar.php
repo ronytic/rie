@@ -91,7 +91,7 @@ $(document).ready(function(){
                         }
 						?>
 						Sucursal
-                        <?=campo("CodSucursal","select",$suc,"form-control",1,"",0,array($val=>$val),$_SESSION['CodSucursal'],1);?>
+                        <?=campo("CodSucursal","select",$suc,"form-control",1,"",0,array($val=>$val),$_SESSION['CodSucursal'],0);?>
 						</td>
 						<td>Estado<?=campo("Estado","select",$est,"form-control",1,"",1,array(),0,0);?></td>
 					</tr>
