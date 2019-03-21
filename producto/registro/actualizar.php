@@ -47,7 +47,7 @@ if(isset($_POST)){
         $mensaje[]="El producto fue modificado correctamente";
         $tipomensaje="success";
     }else{
-        $mensaje[]="Error al mdificar la producto";
+        $mensaje[]="Error al modificar la producto";
         $tipomensaje="danger";
     }
     include_once("mensaje.php");

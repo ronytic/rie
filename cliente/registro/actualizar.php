@@ -36,7 +36,7 @@ if(isset($_POST)){
         $mensaje[]="El cliente fue modificado correctamente";
         $tipomensaje="success";
     }else{
-        $mensaje[]="Error al mdificar la cliente";
+        $mensaje[]="Error al modificar la cliente";
         $tipomensaje="danger";
     }
     include_once("mensaje.php");
