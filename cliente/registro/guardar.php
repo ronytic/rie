@@ -30,7 +30,7 @@ if(isset($_POST)){
     $cliente=new cliente;
     $res=$cliente->insertarRegistro($valores);
     if($res){
-        $mensaje[]="La cliente fue registrado correctamente";
+        $mensaje[]="El cliente fue registrado correctamente";
         $tipomensaje="success";
     }else{
         $mensaje[]="Error al registrar el cliente";
