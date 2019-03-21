@@ -41,6 +41,7 @@ if(isset($_POST)){
     $res=$producto->insertarRegistro($valores);
     if($res){
         $mensaje[]="La producto fue registrado correctamente";
+        $mensaje[]="El producto fue registrado correctamente";
         $tipomensaje="success";
     }else{
         $mensaje[]="Error al registrar el producto";
