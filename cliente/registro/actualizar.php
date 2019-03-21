@@ -33,7 +33,7 @@ if(isset($_POST)){
     $cliente=new cliente;
     $res=$cliente->actualizarRegistro($valores,"CodCliente=$Cod");
     if($res){
-        $mensaje[]="La cliente fue modificó correctamente";
+        $mensaje[]="El cliente fue modificó correctamente";
         $tipomensaje="success";
     }else{
         $mensaje[]="Error al mdificar la cliente";
