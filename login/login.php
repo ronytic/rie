@@ -43,12 +43,12 @@ if(!empty($_POST)){
 		}else {
 			$reg=$usu->loginUsuarios($usuario,$pass);
 			$reg=array_shift($reg);
-			$CodUsuario=$reg['CodUsuario'];
+			$CodUsuario=$reg['Cod'];
 			$NivelAcceso=$reg['NivelAcceso'];
 			$CodSucursal=$reg['CodSucursal'];
 			$Clasificacion="%";
 			//print_r($reg);
-
+			//exit();
 			//echo "no";
 		}
 
