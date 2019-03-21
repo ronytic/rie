@@ -33,6 +33,7 @@
 }
 .logocentreadopequeno img{
 
+    background: transparent;
 }
 @media (max-width: 768px) {
     .col-xs-12.text-right, .col-xs-12.text-left {
