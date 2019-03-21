@@ -18,9 +18,9 @@ $marc=$marca->mostrarTodoRegistro("",1,"Nombre");
 $mar=todoLista($marc,"CodMarca","Nombre");
 $titulo="Registro de Nuevo Pedido";
 $folder="../../";
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
 ?>
 <?php require_once($folder."cabecerahtml.php");?>
 <?php require_once($folder."cabecera.php");?>
@@ -40,7 +40,7 @@ echo "</pre>";
                             $val="";
                         }
                         ?>
-                        <?=campo("CodSucursal","select",$suc,"form-control",1,"",0,array($val=>$val),$_SESSION['CodSucursal'],1);?>
+                        <?=campo("CodSucursal","select",$suc,"form-control",1,"",0,array($val=>$val),$_SESSION['CodSucursal'],0);?>
 
                     </td>
                 </tr>
@@ -81,7 +81,7 @@ echo "</pre>";
                 </tr>
                 <tr>
                     <td class="text-right middle">Fecha de Entrega</td>
-                    <td><input type="date" name="FechaEntrega" id="" class="form-control"   value="<?php echo fecha2Str("",0,"+30 day")?>"></td>
+                    <td><input type="date" name="FechaEntrega" id="" class="form-control"   value="<?php echo fecha2Str("",0,"+31 day")?>"></td>
                 </tr>
                 <tr>
                     <td></td>
