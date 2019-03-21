@@ -75,7 +75,7 @@ $sucursal=new sucursal;
 						</tr>
 						<tr>
 							<td class=" resaltar">Sucursal: </td>
-							<td class=""><?php echo ($s['Nombre'])?></td>
+							<td class=""><span class="badge badge-danger"><?php echo ($s['Nombre'])?></span></td>
 						</tr>
 					</table>
 
@@ -95,11 +95,11 @@ $sucursal=new sucursal;
 						</tr>
 						<tr>
 							<td class="der resaltar">Fecha de Pedido: </td>
-							<td class=""><?php echo fecha2str($d['FechaPedido'])?></td>
+							<td class=""><span class="badge badge-primary"><?php echo fecha2str($d['FechaPedido'])?></span></td>
 						</tr>
 						<tr>
 							<td class="der resaltar">Fecha de Entrega: </td>
-							<td class=""><?php echo fecha2str($d['FechaEntrega'])?></td>
+							<td class=""><span class="badge badge-success"><?php echo fecha2str($d['FechaEntrega'])?></span></td>
 						</tr>
 					</table>
 				</td>
