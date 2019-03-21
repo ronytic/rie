@@ -17,7 +17,6 @@ if($_SESSION['NivelAcceso']!=4){
 switch ($_SESSION['NivelAcceso']) {
     case '1':
         $Cargo="Super Administrador";
-
         break;
     case '2':
         $Cargo="Administrador";
