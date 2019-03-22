@@ -28,6 +28,10 @@
     margin-top: 14px;
 
 }
+.centrarbloquetabla{
+    display: inline-block;
+    margin: 0px auto;
+}
 .sinborde{
     border: transparent solid 0px !important;
 }
