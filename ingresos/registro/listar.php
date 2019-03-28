@@ -47,7 +47,7 @@ $(document).ready(function(){
 			$("#respuesta").html(data);
 		});
     })
-	.submit();
+	// .submit();
 
 	$("#CodCategoria,#CodMarca").change(function(){
             var CodCategoria=$("#CodCategoria").val();
