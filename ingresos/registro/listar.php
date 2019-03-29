@@ -97,7 +97,7 @@ $(document).ready(function(){
 								</tr>
 								<tr>
 									<td>Estado<?=campo("Estado","select",$estado,"form-control",1,"",1,array(),0,0);?></td>
-				                    <td>Fecha Desde<input type="date" name="FechaDesde" class="form-control" value="<?=fecha2Str("",0,"-10day");?>" required></td>
+				                    <td>Fecha Desde<input type="date" name="FechaDesde" class="form-control" value="<?=fecha2Str("",0,"");?>" required></td>
 				                    <td>Fecha Hasta<input type="date" name="FechaHasta" class="form-control" value="<?=fecha2Str("",0);?>" required></td>
 								</tr>
 								<tr>
