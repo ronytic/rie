@@ -15,6 +15,8 @@ include_once("../class/categoria.php");
 $categoria=new categoria;
 include_once("../class/marca.php");
 $marca=new marca;
+include_once("../class/stock.php");
+$stockactual=new stock;
 ?>
 <?php
 	$cat=$categoria->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria'",1,"Nombre");
@@ -35,7 +37,8 @@ $marca=new marca;
 					<?php
 						}
 					?>
-					<table class="table table-hover table-bordered table-striped table-condensed" id="c<?=$c['CodCategoria'];?>">
+					<div class="table-responsive">
+					<table class="sinborde table table-hover table-bordered table-striped table-condensed" id="c<?=$c['CodCategoria'];?>">
 						<thead>
 							<tr class="small">
 								<th width="10">N</th>
@@ -57,7 +60,7 @@ $marca=new marca;
 
 								<th width="50">Estado</th>
 
-								<th width="30"></th>
+
 
 							</tr>
 						</thead>
@@ -80,8 +83,12 @@ $marca=new marca;
 								$c=array_shift($c);
 								$m=$marca->mostrarTodoRegistro("CodMarca=".$d['CodMarca']);
 								$m=array_shift($m);
-								//print_r($_SESSION);
-								$stock=0;
+								// echo $d['CodProducto'];
+								$st=$stockactual->obtener($d['CodProducto'],"%");
+								 $st=array_shift($st);
+								// print_r($st);
+								$stock=(int)$st['Stock'];
+								// $stock=0;
 								if($stock>0){
 									$estado1="primary";
 									$estado2="Disponible";
@@ -92,12 +99,30 @@ $marca=new marca;
 								}
 									?>
 									<tr>
-										<td class="small"><?php echo $i;?></td>
+										<td class="small der"><?php echo $i;?></td>
 
 										<td class="small resaltar" >
+											<small class="badge badge-success">
+											<?php
+											$url="../imagenes/productos/".$d['Foto'];
+											if(file_exists($url) && $d['Foto']!=""){
+												?>
+												<a href="<?=$url;?>" style="color:#FFF" target="_blank" title="Ver Foto">
+												<?php echo ($d['Nombre'])?>
+												<i class="fa fa-image"></i>
+
+												</a>
+												<?php
+											}else{
+												?>
+												<?php echo ($d['Nombre'])?>
+												<?php
+
+											}
+											?>
+											</small>
+
 											<small class="badge badge-default"><?php echo ($m['Nombre'])?></small>
-											<br>
-											<?php echo ($d['Nombre'])?>
 										</td>
 										<?php
 											if($_SESSION['Clasificacion']!="%")
@@ -115,16 +140,7 @@ $marca=new marca;
 											?>
 
 										<td class="small text-center"><span class="badge badge-<?=$estado1;?>"><?=$estado2;?></span></td>
-										<td>
-											<?php
-											$url="../imagenes/productos/".$d['Foto'];
-											if(file_exists($url) && $d['Foto']!=""){
-												?>
-												<a href="<?=$url;?>" class="btn btn-info btn-xs" target="_blank" title="Ver Foto"> <i class="fa fa-image"></i></a>
-												<?php
-											}
-											?>
-										</td>
+
 
 
 									</tr>
@@ -132,7 +148,7 @@ $marca=new marca;
 							}?>
 						</tbody>
 					</table>
-
+					</div>
 				</div>
 
 			</div>
