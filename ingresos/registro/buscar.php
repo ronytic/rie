@@ -2,6 +2,7 @@
 include_once("../../login/check.php");
 
 
+$Detalle=$_POST['Detalle'];
 $CodSucursal=$_POST['CodSucursal'];
 $CodCategoria=$_POST['CodCategoria'];
 $CodMarca=$_POST['CodMarca'];
@@ -12,7 +13,8 @@ $FechaHasta=!empty($_POST['FechaHasta'])?$_POST['FechaHasta']:"%";
 
 include_once("../../class/ingreso.php");
 $ingreso=new ingreso;
-$su=$ingreso->mostrarTodoRegistro("CodSucursal LIKE '$CodSucursal' and
+$su=$ingreso->mostrarTodoRegistro("Detalle LIKE '%$Detalle%' and
+									CodSucursal LIKE '$CodSucursal' and
 									Estado LIKE '$Estado' and
 									FechaRegistro BETWEEN '$FechaDesde' and '$FechaHasta' and
 									CodProducto IN (SELECT CodProducto FROM producto WHERE CodProducto LIKE '$CodProducto' and CodCategoria LIKE '$CodCategoria' and CodMarca LIKE '$CodMarca' and Activo=1)
@@ -27,6 +29,8 @@ include_once("../../class/marca.php");
 $marca=new marca;
 include_once("../../class/producto.php");
 $producto=new producto;
+include_once("../../class/sucursal.php");
+$sucursal=new sucursal;
 ?>
 <table class="table table-hover table-bordered table-striped table-table-condensed">
 	<thead>
@@ -62,6 +66,8 @@ $producto=new producto;
 		$c=array_shift($c);
 		$m=$marca->mostrarTodoRegistro("CodMarca=".$p['CodMarca']);
 		$m=array_shift($m);
+		$s=$sucursal->mostrarTodoRegistro("CodSucursal=".$d['CodSucursal']);
+		$s=array_shift($s);
         ?>
         	<tr>
             	<td class="der"><?php echo $i;?></td>
@@ -79,7 +85,10 @@ $producto=new producto;
 							<td class=" resaltar">Marca: </td>
 							<td class=""><?php echo ($m['Nombre'])?></td>
 						</tr>
-
+						<tr>
+							<td class=" resaltar">Sucursal: </td>
+							<td class=""><span class="badge badge-default"><?php echo ($s['Nombre'])?></span></td>
+						</tr>
 					</table>
 
 
