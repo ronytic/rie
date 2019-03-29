@@ -55,6 +55,10 @@ class bd{
 		//echo print_r($resultado);
 		return $resultado;
 	}
+	function ejecutar($consulta){
+		$res =$this->sql($consulta);
+		return $res;
+	}
 	function queryE($data,$f){
 		//echo $data;
 		if($f=="lock" && md5("lock")==md5($f))
