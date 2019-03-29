@@ -22,7 +22,7 @@ if(isset($_POST)){
     else{
         $Foto="";
     }
-    $valores=array("Nombre"=>"'$Nombre'",
+    @$valores=array("Nombre"=>"'$Nombre'",
                     "Color"=>"'$Color'",
                     "Caracteristicas"=>"'$Caracteristicas'",
                     "Calidad"=>"'$Calidad'",
