@@ -43,7 +43,8 @@ $(document).ready(function(){
 		var Estado=$("[name=Estado]").val();
 		var FechaDesde=$("[name=FechaDesde]").val();
 		var FechaHasta=$("[name=FechaHasta]").val();
-		$.post("buscar.php",{'CodSucursal':CodSucursal,CodCategoria:CodCategoria,CodMarca:CodMarca,CodProducto:CodProducto,Estado:Estado,FechaDesde:FechaDesde,FechaHasta:FechaHasta},function(data){
+		var Detalle=$("[name=Detalle]").val();
+		$.post("buscar.php",{'CodSucursal':CodSucursal,CodCategoria:CodCategoria,CodMarca:CodMarca,CodProducto:CodProducto,Estado:Estado,FechaDesde:FechaDesde,FechaHasta:FechaHasta,Detalle:Detalle},function(data){
 			$("#respuesta").html(data);
 		});
     })
@@ -89,6 +90,7 @@ $(document).ready(function(){
 				<table class="table">
 				            	<tr>
 									<td>Sucursal<?=campo("CodSucursal","select",$suc,"form-control",1,"",1,array(),0,0);?></td>
+									<td>Detalle de Salida<?=campo("Detalle","text","","form-control",0,"",1,array(),0,0);?></td>
 								</tr>
 								<tr>
 									<td>Categoria<?=campo("CodCategoria","select",$cat,"form-control",1,"",1,array(),0,0);?></td>
