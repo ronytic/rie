@@ -17,7 +17,7 @@ $mar=todoLista($marc,"CodMarca","Nombre");
 $mar=array_unshift_assoc($mar,"%","Todos");
 
 
-$titulo="Listado Actualizada de Productos";
+$titulo="Lista Actualizada de Productos";
 $folder="../";
 
 
@@ -39,7 +39,7 @@ $(document).ready(function(){
 		$.post("buscar.php",{'Nombre':Nombre,CodCategoria:CodCategoria,CodMarca:CodMarca},function(data){
 			$("#respuesta").html(data);
 		});
-    });
+    }).submit();
 	$(document).on("click",".eliminarDatos",function(e){
 		e.preventDefault();
 		swal("¿Esta Seguro de Eliminar este Registro?",{
