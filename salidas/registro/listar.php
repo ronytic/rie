@@ -59,7 +59,9 @@ $(document).ready(function(){
         });
 	$(document).on("click",".eliminarDatos",function(e){
 		e.preventDefault();
-		swal("¿Esta Seguro de Anular este Ingreso?",{
+		var Estado=$(this).attr("data-estado");
+		var TituloEstado=$(this).attr("data-tituloestado");
+		swal("¿Esta Seguro de "+TituloEstado+" esta Salida?",{
   			buttons: {
 				cancel: true,
 				confirm: {
@@ -71,7 +73,7 @@ $(document).ready(function(){
 			switch (value) {
 				case "ok":{
 					var Cod=$(this).attr("rel");
-					$.post("eliminar.php",{"Cod":Cod},function(data){
+					$.post("eliminar.php",{"Cod":Cod,Estado:Estado},function(data){
 						$("#formulario").submit();
 					});
 				}break;

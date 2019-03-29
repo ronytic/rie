@@ -127,8 +127,20 @@ $sucursal=new sucursal;
 					*/
 				?>
                 <td class="text-center">
-                	<a href="eliminar.php?Cod=<?php echo $d['CodSalida']?>" class="btn btn-danger btn-xs eliminarDatos" title="Eliminar" rel="<?php echo $d['CodSalida']?>">
-                    	<i class="fa fa-close"></i> Anular
+					<?php
+						if($d['Estado']=="Activo"){
+							$Estado='Anulado';
+							$TituloEstado='Anular';
+							$BtnEstado="danger";
+						}else{
+							$Estado='Activo';
+							$TituloEstado='Activar';
+							$BtnEstado="primary";
+
+						}
+					?>
+                	<a href="eliminar.php?Cod=<?php echo $d['CodSalida']?>" class="btn btn-<?=$BtnEstado;?> btn-xs eliminarDatos" title="Eliminar" rel="<?php echo $d['CodSalida']?>" data-tituloestado="<?=$TituloEstado;?>" data-estado="<?=$Estado;?>">
+                    	<i class="fa fa-close"></i> <?=$TituloEstado;?>
                     </a>
                 </td>
             </tr>
