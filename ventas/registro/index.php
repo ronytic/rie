@@ -78,6 +78,8 @@ $folder="../../";
             $("#Cantidad").val(0)
             var Detalle=$("#Detalle").val();
             $("#Detalle").val('');
+            $("#stock").html('')
+            $("#CodProducto").val('')
             if(CodProducto!=""){
 
                 if(parseInt(Cantidad)>parseInt($("#stock").html()) || parseInt(Cantidad)<=0){
