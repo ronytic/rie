@@ -27,6 +27,9 @@ $folder="../../";
 <script>
     let l=0;
     $(document).ready(function(){
+        $(document).on("focus","#Precio,#Cantidad",function(){
+            $(this).select();
+        });
         // alert("s");
         $("#CodCategoria,#CodMarca").change(function(e){
             var CodCategoria=$("#CodCategoria").val();
@@ -135,6 +138,7 @@ $folder="../../";
 
                 </tbody>
             </table>
+            <br>
             <div id="listado">
             <table class="table table-bordered table-hover ">
                 <thead>
@@ -149,6 +153,7 @@ $folder="../../";
                 </tbody>
             </table>
             </div>
+            <br>
             <input type="submit" value="Confirmar Traspaso" class="btn btn-primary">
         </form>
     </div>
