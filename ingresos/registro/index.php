@@ -33,7 +33,9 @@ $folder="../../";
             });
         });
 
-
+        $(document).on("focus","#Precio,#Cantidad",function(){
+            $(this).select();
+        });
         $("#aumentar").click(function (e) {
             e.preventDefault();
             //alert($("#CodProducto >option:selected").html());
@@ -109,6 +111,7 @@ $folder="../../";
 
                 </tbody>
             </table>
+            <br>
             <div id="listado">
             <table class="table table-bordered table-hover ">
                 <thead>
@@ -123,6 +126,7 @@ $folder="../../";
                 </tbody>
             </table>
             </div>
+            <br>
             <input type="submit" value="Guardar" class="btn btn-primary">
         </form>
     </div>
