@@ -33,6 +33,7 @@ if(isset($_POST)){
                         "TotalGeneral"=>"'$TotalGeneral'",
                         "Cancelado"=>"'$Cancelado'",
                         "Cambio"=>"'$Cambio'",
+                        "Estado"=>"'Activo'",
                     );
 
 $res=$venta->insertarRegistro($valores);
