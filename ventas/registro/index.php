@@ -285,7 +285,11 @@ $folder="../../";
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan="4" class="der">
+                        <th colspan="3" rowspan="2">
+                            Detalle
+                            <?=campo("Detalle","textarea","","form-control");?>
+                        </th>
+                        <th colspan="1" class="der">
                         Total
                         </th>
                         <th class="der">
@@ -293,7 +297,7 @@ $folder="../../";
                         </th>
                     </tr>
                     <tr>
-                        <th colspan="4" class="der">
+                        <th colspan="1" class="der">
                         Cancelado
                         </th>
                         <th class="der">

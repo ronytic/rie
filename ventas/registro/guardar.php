@@ -21,6 +21,7 @@ if(isset($_POST)){
     $TotalGeneral=$_POST['TotalGeneral'];
     $Cancelado=$_POST['Cancelado'];
     $Cambio=$_POST['Cambio'];
+    $Detalle=$_POST['Detalle'];
 
     $cli=$cliente->mostrarTodoRegistro("CodCliente=".$CodCliente);
     $cli=array_shift($cli);
@@ -33,6 +34,7 @@ if(isset($_POST)){
                         "TotalGeneral"=>"'$TotalGeneral'",
                         "Cancelado"=>"'$Cancelado'",
                         "Cambio"=>"'$Cambio'",
+                        "Detalle"=>"'$Detalle'",
                         "Estado"=>"'Activo'",
                     );
 
