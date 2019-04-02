@@ -37,9 +37,10 @@ if(isset($_POST)){
 
 $res=$venta->insertarRegistro($valores);
 $CodVenta=$venta->ultimo();
-echo $CodVenta;
+//echo $CodVenta;
     foreach ($p as $pro) {
         $val=array("CodVenta"=>"'$CodVenta'",
+                        "CodSucursal"=>"'$CodSucursal'",
                         "CodProducto"=>"'".$pro['CodProducto']."'",
                         "Cantidad"=>"'".$pro['Cantidad']."'",
                         "Precio"=>"'".$pro['Precio']."'",
