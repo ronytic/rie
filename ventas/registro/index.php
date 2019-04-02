@@ -37,7 +37,7 @@ $folder="../../";
             var CodCategoria=$("#CodCategoria").val();
             var CodMarca=$("#CodMarca").val();
             if($("#CodSucursal").val()==""){
-                alert("Seleccionar una sucursal de origen ");
+                swal("Seleccionar una sucursal de origen",{buttons: {confirm: {text:"Aceptar",value:'ok'}}});
                 e.preventDefault();
             }else{
                 $.post("obtenerproducto.php",{CodCategoria:CodCategoria,CodMarca:CodMarca},function(data){
