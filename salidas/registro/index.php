@@ -64,6 +64,8 @@ $folder="../../";
                 l++;
                 $.post("guardarproducto.php",{"l":l,"CodProducto":CodProducto,Cantidad:Cantidad,Detalle:Detalle},function(data){
                     $("#marca").append(data);
+                    $("#CodProducto").val('')
+                    $("#stock").html('');
                 });
             }
         });
@@ -121,7 +123,7 @@ $folder="../../";
                     <td>
                         <?=campo("CodCategoria","select",$cat,"form-control input-sm",1,"",1,array(),0,1);?>
                         <?=campo("CodMarca","select",$mar,"form-control",1,"",1,array(),0,1);?>
-                        <?=campo("CodProducto","select",array(),"form-control",1,"",1,array(),0,1);?>
+                        <?=campo("CodProducto","select",array(),"form-control",0,"",1,array(),0,1);?>
                     </td>
                     <td><input type="number" name="Cantidad" id="Cantidad" class="form-control der" min="0" step="1" value="0"><br>
                         <div>

@@ -22,15 +22,6 @@ if(isset($_POST)){
     $salida=new salida;
 
     foreach($pro as $p){
-
-        $valores=array("CodProducto"=>"'".$p['CodProducto']."'",
-                        "Cantidad"=>"'".$p['Cantidad']."'",
-                        "CodSucursal"=>"'$CodSucursalDestino'",
-                        "Estado"=>"'Activo'",
-                        "Detalle"=>"'Traspaso de $NombreSucursalOrigen a $NombreSucursalDestino - ".$p['Detalle']."'",
-                    );
-        $res=$ingreso->insertarRegistro($valores);
-
         $valores=array("CodProducto"=>"'".$p['CodProducto']."'",
                         "Cantidad"=>"'".$p['Cantidad']."'",
                         "CodSucursal"=>"'$CodSucursalOrigen'",
@@ -38,6 +29,16 @@ if(isset($_POST)){
                         "Detalle"=>"'Traspaso de $NombreSucursalOrigen a $NombreSucursalDestino - ".$p['Detalle']."'",
                     );
         $res=$salida->insertarRegistro($valores);
+        $CodSalida=$salida->ultimo();
+        $valores=array("CodProducto"=>"'".$p['CodProducto']."'",
+                        "Cantidad"=>"'".$p['Cantidad']."'",
+                        "CodSalida"=>"'$CodSalida'",
+                        "CodSucursal"=>"'$CodSucursalDestino'",
+                        "Estado"=>"'Activo'",
+                        "Detalle"=>"'Traspaso de $NombreSucursalOrigen a $NombreSucursalDestino - ".$p['Detalle']."'",
+                    );
+        $res=$ingreso->insertarRegistro($valores);
+
     }
     if($res){
         $mensaje[]="El traspaso fue registrado correctamente";
