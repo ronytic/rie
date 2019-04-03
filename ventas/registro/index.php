@@ -52,12 +52,34 @@ $folder="../../";
             var CodProducto=$(this).val();
             var CodSucursal=$("#CodSucursal").val();
             var CodCliente=$("#CodCliente").val();
-
+            if($("#CodCliente").val()==""){
+                swal("Debes seleccionar un cliente ",{buttons: {confirm: {text:"Aceptar",value:'ok'}}});
+                $("#CodProducto").val('')
+                return false;
+            }
             $.post("stock.php",{'CodProducto':CodProducto,CodSucursal:CodSucursal,CodCliente:CodCliente},function(data){
                 $("#Cantidad").attr("max",data.stock).val('0');
                 $("#stock").html(data.stock);
+                $("#CuadroColor").css("backgroundColor",data.color);
+                $("#Caracteristicas").html(data.Caracteristicas);
+                $("#Calidad").html(data.Calidad);
+                $("#Codigo").html(data.Codigo);
+                if(data.Foto!==null){
+                    $("#FotoProducto").attr("href",'../../imagenes/productos/'+data.Foto).show();
+                }else{
+                    $("#FotoProducto").hide();
+                }
                 $("#Precio").attr("max",data.precio).val(data.precio);
             },"json");
+
+        });
+
+        $(document).on("change","#CodCliente",function(){
+            var CodCliente=$(this).val();
+
+            $.post("verfoto.php",{'CodCliente':CodCliente},function(data){
+                $("#Foto").html(data);
+            });
 
         });
 
@@ -77,9 +99,10 @@ $folder="../../";
             var Total=$("#Total").val();
             $("#Cantidad").val(0)
             var Detalle=$("#Detalle").val();
-            $("#Detalle").val('');
-            $("#stock").html('')
-            $("#CodProducto").val('')
+            if($("#CodCliente").val()==""){
+                swal("Debes seleccionar un cliente ",{buttons: {confirm: {text:"Aceptar",value:'ok'}}});
+                return false;
+            }
             if(CodProducto!=""){
 
                 if(parseInt(Cantidad)>parseInt($("#stock").html()) || parseInt(Cantidad)<=0){
@@ -93,6 +116,15 @@ $folder="../../";
                         $.post("guardarproducto.php",{"l":l,"CodProducto":CodProducto,Cantidad:Cantidad,Precio:Precio,Total:Total,Detalle:Detalle},function(data){
                             $("#marca").append(data);
                             sumar();
+                            $("#Detalle").val('');
+                            $("#stock").html('')
+                            $("#CodProducto").val('')
+                            $("#CuadroColor").css("backgroundColor","transparent");
+                            $("#Caracteristicas").html('');
+                            $("#Calidad").html('');
+                            $("#Codigo").html('');
+                            $("#Foto").hide('slow');
+
 
                         });
                     }
@@ -228,23 +260,51 @@ $folder="../../";
                 </tr>
                 <tr>
                     <td class="text-right middle" width="30%">Cliente</td>
-                    <td><?=campo("CodCliente","select",$cli,"form-control",1,"",1,array(),1,1);?></td>
+                    <td><?=campo("CodCliente","select",$cli,"form-control",1,"",1,array(),"",1);?></td>
+                    <td id="Foto"></td>
                 </tr>
             </table>
             <table class="table table-bordered table-hover ">
                 <thead>
                     <tr>
                         <th>Producto</th>
-                        <th width="100">Cantidad</th>
-                        <th>Detalle</th>
+                        <th width="50%">Cantidad</th>
+
                     </tr>
                 </thead>
                 <tbody >
                 <tr>
-                    <td>
+                    <td class="small">
                         <?=campo("CodCategoria","select",$cat,"form-control input-sm",1,"",1,array(),0,1);?>
                         <?=campo("CodMarca","select",$mar,"form-control",1,"",1,array(),0,1);?>
                         <?=campo("CodProducto","select",array(),"form-control",1,"",1,array(),0,1);?>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td class="der resaltar" width="40%">Color: </td>
+                                <td><div style="width:20px;height:20px;" id="CuadroColor"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="der resaltar">Caracteristicas: </td>
+                                <td id="Caracteristicas"></td>
+                            </tr>
+                            <tr>
+                                <td class="der resaltar">Calidad: </td>
+                                <td id="Calidad"></td>
+                            </tr>
+                            <tr>
+                                <td class="der resaltar">Código: </td>
+                                <td id="Codigo"></td>
+                            </tr>
+                            <tr>
+                                <td class="der resaltar">Foto: </td>
+                                <td >
+
+                                        <a href="#" id="FotoProducto" class="btn btn-info btn-xs" style="display:none;" target="_blank"> <i class="fa fa-image"></i></a>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="width:20px;height:20px;" ></div>
                     </td>
                     <td style="position:relative"><input type="number" name="Cantidad" id="Cantidad" class="form-control der" min="0" step="1" value="0" max="">
                         <div id="cuadrostock">
@@ -258,8 +318,8 @@ $folder="../../";
                             <strong>Total</strong>
                             <input type="number" name="Total" id="Total" class="form-control der" min="0" step="0.01" value="0" readonly>
                         </div>
-                    </td>
-                    <td><input type="text" name="Detalle" id="Detalle" class="form-control"  >
+                        <strong>Detalle de Producto</strong>
+                        <input type="text" name="Detalle" id="Detalle" class="form-control"  >
                     <br>
                     <a href="#" class="btn btn-success block" id="aumentar"> <i class="fa fa-plus "></i> Agregar</a>
                         </td>
