@@ -40,27 +40,7 @@ $(document).ready(function(){
 			$("#respuesta").html(data);
 		});
     }).submit();
-	$(document).on("click",".eliminarDatos",function(e){
-		e.preventDefault();
-		swal("¿Esta Seguro de Eliminar este Registro?",{
-  			buttons: {
-				cancel: true,
-				confirm: {
-					text:"Aceptar",
-					value:'ok'
-				}
-  			}
-		}).then((value)=>{
-			switch (value) {
-				case "ok":{
-					var Cod=$(this).attr("rel");
-					$.post("eliminar.php",{"Cod":Cod},function(data){
-						$("#formulario").submit();
-					});
-				}break;
-			}
-		});
-	});
+
 
 });
 </script>
