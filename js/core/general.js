@@ -4,6 +4,13 @@ $(document).ready(function(){
         var c=$(this).attr("data-rel");
         fnExcelReport(c);
     });
+    $(document).ajaxStart(function() {
+		$("#CuadroCargador").show();
+    });
+    $(document).ajaxStop(function() {
+		$("#CuadroCargador").hide();
+	});
+
 });
 
 function fnExcelReport(id)

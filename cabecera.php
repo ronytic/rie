@@ -1,7 +1,9 @@
 </head>
 
 <body class="">
-
+    <div style="position:fixed;top:0px;left:0px;z-index:10000;width:100%; display:none;" id="CuadroCargador">
+    <div style="background-color:#FFF;width:165px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;margin:0px auto;"><img src="<?=$folder;?>imagenes/cargador/30.gif" alt=""></div>
+    </div>
     <div id="wrapper">
 
     <nav class="navbar-default navbar-static-side" role="navigation">
