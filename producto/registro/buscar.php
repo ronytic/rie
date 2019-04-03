@@ -27,10 +27,14 @@ $marca=new marca;
 
 			<th width="100">Precios de Venta</th>
         	<th width="100">Detalles</th>
-
+			<?php
+					if(in_array( $_SESSION['NivelAcceso'],array(1,2))){
+				?>
             <th width="40"></th>
             <th width="40"></th>
-
+			<?php
+			}
+			?>
         </tr>
     </thead>
 	<tbody>
@@ -130,7 +134,9 @@ $marca=new marca;
 					</table>
 				</td>
 
-
+				<?php
+					if(in_array( $_SESSION['NivelAcceso'],array(1,2))){
+				?>
                 <td class="text-center">
                 	<a href="modificar.php?Cod=<?php echo $d['CodProducto']?>"  class="btn btn-primary btn-xs " title="Modificar" rel="<?php echo $d['CodProducto']?>">
                     	<i class="fa fa-pencil"></i>
@@ -141,6 +147,9 @@ $marca=new marca;
                     	<i class="fa fa-trash"></i>
                     </a>
                 </td>
+				<?php
+					}
+				?>
             </tr>
         <?php
     }?>
