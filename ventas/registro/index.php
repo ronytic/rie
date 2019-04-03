@@ -60,7 +60,7 @@ $folder="../../";
             $.post("stock.php",{'CodProducto':CodProducto,CodSucursal:CodSucursal,CodCliente:CodCliente},function(data){
                 $("#Cantidad").attr("max",data.stock).val('0');
                 $("#stock").html(data.stock);
-                $("#CuadroColor").css("backgroundColor",data.color);
+                $("#CuadroColor").css("backgroundColor",data.Color);
                 $("#Caracteristicas").html(data.Caracteristicas);
                 $("#Calidad").html(data.Calidad);
                 $("#Codigo").html(data.Codigo);
