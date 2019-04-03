@@ -38,7 +38,13 @@ $sucursal=new sucursal;
 
             <!-- <th width="40"></th> -->
             <th width="40"></th>
+			<?php
+				if(in_array( $_SESSION['NivelAcceso'],array(1,2))){
+			?>
             <th width="40"></th>
+			<?php
+				}
+			?>
 
         </tr>
     </thead>
@@ -134,7 +140,11 @@ $sucursal=new sucursal;
                     	<i class="fa fa-search"></i>
                     </a>
 				</td>
+				<?php
+					if(in_array( $_SESSION['NivelAcceso'],array(1,2))){
+				?>
                 <td class="text-center">
+
 					<?php
 						if($d['Estado']=="Activo"){
 							$Estado='Anulado';
@@ -151,6 +161,9 @@ $sucursal=new sucursal;
                     	<i class="fa fa-close"></i> <?=$TituloEstado;?>
                     </a>
                 </td>
+				<?php
+					}
+				?>
             </tr>
         <?php
     }?>

@@ -84,7 +84,16 @@ $(document).ready(function(){
         	<div class="table-responsive sinborde">
 				<table class="table">
 				            	<tr>
-									<td>Sucursal<?=campo("CodSucursal","select",$suc,"form-control",1,"",1,array(),0,0);?></td>
+									<td>Sucursal<?php
+											if(!in_array( $_SESSION['NivelAcceso'],array(1,2))){
+												$val="disabled";
+												echo campo("CodSucursal","hidden",$_SESSION['CodSucursal']);
+											}else{
+												$val="";
+											}
+											?>
+											<?=campo("CodSucursal","select",$suc,"form-control",1,"",0,array($val=>$val),$_SESSION['CodSucursal'],0);?>
+									</td>
 									<td>Cliente<?=campo("CodCliente","select",$cli,"form-control",0,"",1,array(),0,0);?></td>
 									<td>Estado<?=campo("Estado","select",$estado,"form-control",1,"",1,array(),0,0);?></td>
 								</tr>
