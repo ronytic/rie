@@ -21,5 +21,10 @@ $producto=new producto;
 $pro=$producto->mostrarTodoRegistro("CodProducto=".$CodProducto);
 $pro=array_shift($pro);
 $datos['precio']=$pro['PrecioVenta'.ucwords($Clasificacion)];
+$datos['Color']=$pro['Color'];
+$datos['Caracteristicas']=$pro['Caracteristicas'];
+$datos['Calidad']=$pro['Calidad'];
+$datos['Codigo']=$pro['Codigo'];
+$datos['Foto']=$pro['Foto'];
 echo json_encode($datos);
 ?>
