@@ -40,6 +40,7 @@ $suc=$sucursal->mostrarTodoRegistro("",1,"Nombre");
 					<?php
 						}
 					?>
+
 					<div class="table-responsive">
 					<table class="sinborde table table-hover table-bordered table-striped table-condensed" id="c<?=$c['CodCategoria'];?>">
 						<thead>
@@ -107,13 +108,15 @@ $suc=$sucursal->mostrarTodoRegistro("",1,"Nombre");
 
 								// $stock=0;
 								//$totalstock=10;
-								if($totalstock>0){
+								if($totalstock>$d['CantidadMinima']){
 									$estado1="primary";
 									$estado2="Disponible";
+								}elseif($totalstock<=$d['CantidadMinima'] && $totalstock>0){
+									$estado1="warning";
+									$estado2=$d['CantidadMinima']." - Comprar";
 								}else{
 									$estado1="danger";
 									$estado2="Agotado";
-
 								}
 									?>
 									<tr>
