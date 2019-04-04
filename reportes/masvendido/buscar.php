@@ -180,7 +180,7 @@ $usuario=new usuario;
 			<table class="table table-bordered">
 				<thead>
 					<tr class="text-center">
-						<th class="text-center">Cantidad Vendida</th>
+						<th class="text-center" width="50%">Total de Cantidad Vendida</th>
 						<th class="text-center">Total Vendido</th>
 
 					</tr>

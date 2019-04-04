@@ -106,7 +106,7 @@ include_once($folder."cabecera.php");?>
 											<?=campo("CodSucursal","select",$suc,"form-control",1,"",0,array($val=>$val),$_SESSION['CodSucursal'],0);?>
 									</td>
 
-									<td>Usuario<?=campo("CodUsuario","select",$us,"form-control",0,"",1,array(),0,0);?></td>
+									<td>Usuario<?=campo("CodUsuario","select",$us,"form-control",0,"",0,array(),0,0);?></td>
 								</tr>
 								<tr>
 									<td>Detalle de Salida<?=campo("Detalle","text","","form-control",0,"",1,array(),0,0);?></td>
