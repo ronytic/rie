@@ -44,7 +44,7 @@ $(document).ready(function(){
 	.submit();
 	$(document).on("click",".eliminarDatos",function(e){
 		e.preventDefault();
-		swal("¿Esta Seguro de Eliminar este Registro?",{
+		swal("¿Esta Seguro de Eliminar este Usuario?",{
   			buttons: {
 				cancel: true,
 				confirm: {
