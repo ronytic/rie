@@ -1,7 +1,9 @@
 <?php
 if($_SESSION['NivelAcceso']!=4){
-    include("class/usuario.php");
-    $usuario=new usuario;
+    if(!defined("CLASEUSUARIO")){
+        include("class/usuario.php");
+        $usuario=new usuario;
+    }
     $datosusu=$usuario->mostrarDatos($_SESSION['CodUsuarioLog']);
     $datosusu=array_shift($datosusu);
     $nombrecompleto=$datosusu['Nombres']." ".$datosusu['Apellidos'];
