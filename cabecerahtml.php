@@ -4,6 +4,7 @@ if($_SESSION['NivelAcceso']!=4){
         include("class/usuario.php");
         $usuario=new usuario;
     }
+
     $datosusu=$usuario->mostrarDatos($_SESSION['CodUsuarioLog']);
     $datosusu=array_shift($datosusu);
     $nombrecompleto=$datosusu['Nombres']." ".$datosusu['Apellidos'];
@@ -16,7 +17,14 @@ if($_SESSION['NivelAcceso']!=4){
     $nombrecompleto=$datoscli['Nombres']." ".$datoscli['Apellidos'];
     $solonombre=$datoscli['Nombres'];
 }
-switch ($_SESSION['NivelAcceso']) {
+if(!defined("CLASEACCESO")){
+include("class/acceso.php");
+$acceso=new acceso;
+}
+$car=$acceso->mostrarTodoRegistro("CodAcceso=".$_SESSION['NivelAcceso']);
+$car=array_shift($car);
+    $Cargo=$car['Nombre'];
+/*switch () {
     case '1':
         $Cargo="Super Administrador";
         break;
@@ -32,10 +40,8 @@ switch ($_SESSION['NivelAcceso']) {
     default:
         $Cargo="";
         break;
-}
+}*/
 
-$cargo="sd";
-//$foto=$datosusu['Foto']!=""?$datosusu['Foto']:"general.jpg";
 
 include("class/menu.php");
 $menu=new menu;
