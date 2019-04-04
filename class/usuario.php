@@ -1,5 +1,6 @@
 <?php
 include_once("bd.php");
+define("CLASEUSUARIO",1);
 class usuario extends bd{
 	var $tabla="usuario";
 	function mostrarDatos($CodUsuario){
