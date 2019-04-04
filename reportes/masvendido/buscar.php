@@ -94,36 +94,30 @@ $usuario=new usuario;
         	<tr>
             	<td class="der"><?php echo $i;?></td>
 				<td class="small">
-
-
-				<table class="table table-bordered">
-
-					<tr>
-						<td class="resaltar" colspan="2"><?php echo ($p['Nombre'])?></td>
-					</tr>
-					<tr>
-						<td class=" resaltar" width="35%">Categoria: </td>
-						<td class=""><?php echo ($c['Nombre'])?></td>
-					</tr>
-					<tr>
-						<td class=" resaltar">Marca: </td>
-						<td class=""><?php echo ($m['Nombre'])?></td>
-					</tr>
-					<tr>
-						<td class=" resaltar">Cantidad Vendida: </td>
-						<td class=""><span class="badge badge-danger"><?php echo ($d['Cantidad'])?></span></td>
-					</tr>
-					<tr>
-						<td class=" resaltar">Total </td>
-						<td class=""><span class="badge badge-primary"><?php echo num($d['Total'])?></span></td>
-					</tr>
-
-
-				</table>
+					<table class="table table-bordered">
+						<tr>
+							<td class="resaltar" colspan="2"><?php echo ($p['Nombre'])?></td>
+						</tr>
+						<tr>
+							<td class=" resaltar" width="35%">Categoria: </td>
+							<td class=""><?php echo ($c['Nombre'])?></td>
+						</tr>
+						<tr>
+							<td class=" resaltar">Marca: </td>
+							<td class=""><?php echo ($m['Nombre'])?></td>
+						</tr>
+						<tr>
+							<td class=" resaltar">Cantidad Vendida: </td>
+							<td class=""><span class="badge badge-danger"><?php echo ($d['Cantidad'])?></span></td>
+						</tr>
+						<tr>
+							<td class=" resaltar">Total </td>
+							<td class=""><span class="badge badge-primary"><?php echo num($d['Total'])?></span></td>
+						</tr>
+					</table>
 				</td>
 				<td class="small">
 					<table class="table table-bordered">
-
 						<tr>
 							<td class="der resaltar" width="60%">Unitario: </td>
 							<td class="der"><?php echo num($p['PrecioVentaUnitario'])?></td>
@@ -143,7 +137,6 @@ $usuario=new usuario;
 					</table>
 				</td>
 				<td class="small">
-
 					<table class="table table-bordered">
 						<tr>
 							<td class="der resaltar" width="40%">Color: </td>
