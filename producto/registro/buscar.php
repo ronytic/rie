@@ -73,6 +73,7 @@ $marca=new marca;
 							<td class=""><?php echo ($m['Nombre'])?></td>
 						</tr>
 
+
 					</table>
 
 
@@ -123,7 +124,7 @@ $marca=new marca;
 							<td>
 								<?php
 								$url="../../imagenes/productos/".$d['Foto'];
-								if(file_exists($url)){
+								if(file_exists($url) && $d['Foto']!=""){
 									?>
 									<a href="<?=$url;?>" class="btn btn-info btn-xs" target="_blank"> <i class="fa fa-image"></i></a>
 									<?php
