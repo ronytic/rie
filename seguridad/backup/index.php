@@ -20,7 +20,7 @@ $(document).ready(function(){
 <div class="panel">
   <div class="panel-body">
     <div class="text-center">
-      <a href="#" class="btn btn-primary btn" id="enlacebackup"> <i class="fa fa-file"></i> Obtener el Archivo </a>
+      <a href="#" class="btn btn-success btn" id="enlacebackup"> <i class="fa fa-file"></i> Obtener  Archivo de Copia de Seguridad</a>
     </div>
     <br>
     <div class="" id="destino">
