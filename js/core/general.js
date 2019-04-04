@@ -5,10 +5,10 @@ $(document).ready(function(){
         fnExcelReport(c);
     });
     $(document).ajaxStart(function() {
-		$("#CuadroCargador").show();
+		$("#CuadroCargador").fadeIn('slow');
     });
     $(document).ajaxStop(function() {
-		$("#CuadroCargador").hide();
+		$("#CuadroCargador").fadeOut('slow');
 	});
 
 });
