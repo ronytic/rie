@@ -1,5 +1,6 @@
 <?php
 $folder="../";
+require_once("../configuracion.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +17,9 @@ $folder="../";
 
     <link href="<?php echo $folder;?>css/core/animate.css" rel="stylesheet">
     <link href="<?php echo $folder;?>css/core/style.css" rel="stylesheet">
+    <?php
+        echo $CodigoNotificación;
+    ?>
 
 </head>
 
