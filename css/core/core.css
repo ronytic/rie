@@ -1,3 +1,6 @@
+legend{
+    font-size: 16px !important;
+}
 .label,.label-m{
     text-align:right;
     font-weight:bold;
