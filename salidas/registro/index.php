@@ -27,6 +27,7 @@ $folder="../../";
 <script>
     let l=0;
     $(document).ready(function(){
+        $("#CodProducto").select2();
         $(document).on("focus","#Precio,#Cantidad",function(){
             $(this).select();
         });
@@ -35,11 +36,20 @@ $folder="../../";
             var CodCategoria=$("#CodCategoria").val();
             var CodMarca=$("#CodMarca").val();
             if($("#CodSucursalOrigen").val()==""){
-                alert("Seleccionar una sucursal de origen ");
+                swal("Seleccionar una sucursal de origen ",{
+                buttons: {
+
+                    confirm: {
+                        text:"Aceptar",
+                        value:'ok'
+                    }
+                }
+            });
                 e.preventDefault();
             }else{
                 $.post("obtenerproducto.php",{CodCategoria:CodCategoria,CodMarca:CodMarca},function(data){
                     $("#CodProducto").html(data);
+                    $("#CodProducto").select2();
                 });
             }
         });

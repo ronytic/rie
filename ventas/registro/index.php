@@ -32,6 +32,8 @@ $folder="../../";
 <script>
     let l=0;
     $(document).ready(function(){
+        $("#CodCliente").select2();
+        $("#CodProducto").select2();
         // alert("s");
         $("#CodCategoria,#CodMarca").change(function(e){
             var CodCategoria=$("#CodCategoria").val();
@@ -42,6 +44,7 @@ $folder="../../";
             }else{
                 $.post("obtenerproducto.php",{CodCategoria:CodCategoria,CodMarca:CodMarca},function(data){
                     $("#CodProducto").html(data);
+                    $("#CodProducto").select2();
                 });
             }
         });
@@ -64,7 +67,7 @@ $folder="../../";
                 $("#Caracteristicas").html(data.Caracteristicas);
                 $("#Calidad").html(data.Calidad);
                 $("#Codigo").html(data.Codigo);
-                if(data.Foto!==null){
+                if( data.Foto!=""  ){
                     $("#FotoProducto").attr("href",'../../imagenes/productos/'+data.Foto).show();
                 }else{
                     $("#FotoProducto").hide();
@@ -253,14 +256,14 @@ $folder="../../";
                             $val="";
                         }
                         ?>
-                        <?=campo("CodSucursal","select",$suc,"form-control",1,"",0,array($val=>$val),$_SESSION['CodSucursal'],0);?>
+                        <?=campo("CodSucursal","select",$suc,"form-control",1,"",1,array($val=>$val),$_SESSION['CodSucursal'],0);?>
 
                     </td>
                     <td class="col-lg-4"></td>
                 </tr>
                 <tr>
                     <td class="text-right middle" width="30%">Cliente</td>
-                    <td><?=campo("CodCliente","select",$cli,"form-control",1,"",1,array(),"",1);?></td>
+                    <td><?=campo("CodCliente","select",$cli,"form-control",1,"",0,array(),"",1);?></td>
                     <td id="Foto"></td>
                 </tr>
             </table>
@@ -275,9 +278,9 @@ $folder="../../";
                 <tbody >
                 <tr>
                     <td class="small">
-                        <?=campo("CodCategoria","select",$cat,"form-control input-sm",1,"",1,array(),0,1);?>
-                        <?=campo("CodMarca","select",$mar,"form-control",1,"",1,array(),0,1);?>
-                        <?=campo("CodProducto","select",array(),"form-control",1,"",1,array(),0,1);?>
+                        <?=campo("CodCategoria","select",$cat,"form-control input-sm",1,"",0,array(),0,1);?>
+                        <?=campo("CodMarca","select",$mar,"form-control",1,"",0,array(),0,1);?>
+                        <?=campo("CodProducto","select",array(),"form-control",1,"",0,array(),0,1);?>
                         <table class="table table-bordered">
                             <tr>
                                 <td class="der resaltar" width="40%">Color: </td>

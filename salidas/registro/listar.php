@@ -30,6 +30,7 @@ $folder="../../";
 <?php include_once($folder."cabecerahtml.php");?>
 <script>
 $(document).ready(function(){
+	$("#CodProducto").select2();
 	$(document).ajaxStart(function() {
 		$("#respuesta").html('Cargando...');
 	});
@@ -54,7 +55,8 @@ $(document).ready(function(){
             var CodCategoria=$("#CodCategoria").val();
             var CodMarca=$("#CodMarca").val();
             $.post("obtenerproducto.php",{CodCategoria:CodCategoria,CodMarca:CodMarca},function(data){
-                $("#CodProducto").html(data);
+				$("#CodProducto").html(data);
+				$("#CodProducto").select2();
             });
         });
 	$(document).on("click",".eliminarDatos",function(e){
@@ -92,12 +94,12 @@ $(document).ready(function(){
 				<table class="table">
 				            	<tr>
 									<td>Sucursal<?=campo("CodSucursal","select",$suc,"form-control",1,"",1,array(),0,0);?></td>
-									<td>Detalle de Salida<?=campo("Detalle","text","","form-control",0,"",1,array(),0,0);?></td>
+									<td>Detalle de Salida<?=campo("Detalle","text","","form-control",0,"",0,array(),0,0);?></td>
 								</tr>
 								<tr>
-									<td>Categoria<?=campo("CodCategoria","select",$cat,"form-control",1,"",1,array(),0,0);?></td>
-									<td>Marca<?=campo("CodMarca","select",$mar,"form-control",0,"",1,array(),0,0);?></td>
-									<td>Producto<?=campo("CodProducto","select",array(),"form-control",0,"",1,array(),0,1);?></td>
+									<td>Categoria<?=campo("CodCategoria","select",$cat,"form-control",1,"",0,array(),0,0);?></td>
+									<td>Marca<?=campo("CodMarca","select",$mar,"form-control",0,"",0,array(),0,0);?></td>
+									<td>Producto<?=campo("CodProducto","select",array(),"form-control",0,"",0,array(),0,1);?></td>
 								</tr>
 								<tr>
 									<td>Estado<?=campo("Estado","select",$estado,"form-control",1,"",1,array(),0,0);?></td>

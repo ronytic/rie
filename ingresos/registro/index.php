@@ -25,11 +25,13 @@ $folder="../../";
     let l=0;
     $(document).ready(function(){
         // alert("s");
+        $("#CodProducto").select2();
         $("#CodCategoria,#CodMarca").change(function(){
             var CodCategoria=$("#CodCategoria").val();
             var CodMarca=$("#CodMarca").val();
             $.post("obtenerproducto.php",{CodCategoria:CodCategoria,CodMarca:CodMarca},function(data){
                 $("#CodProducto").html(data);
+                $("#CodProducto").select2();
             });
         });
 

@@ -30,6 +30,7 @@ $folder="../../";
 <?php include_once($folder."cabecerahtml.php");?>
 <script>
 $(document).ready(function(){
+	$("#CodProducto").select2();
 	$(document).ajaxStart(function() {
 		$("#respuesta").html('Cargando...');
 	});
@@ -54,7 +55,8 @@ $(document).ready(function(){
             var CodCategoria=$("#CodCategoria").val();
             var CodMarca=$("#CodMarca").val();
             $.post("obtenerproducto.php",{CodCategoria:CodCategoria,CodMarca:CodMarca},function(data){
-                $("#CodProducto").html(data);
+				$("#CodProducto").html(data);
+				$("#CodProducto").select2();
             });
         });
 	$(document).on("click",".eliminarDatos",function(e){
