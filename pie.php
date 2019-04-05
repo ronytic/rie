@@ -18,6 +18,7 @@
     <!-- Principal scripts -->
 
     <script src="<?php echo $folder?>js/core/bootstrap.min.js"></script>
+    <script src="<?php echo $folder?>js/plugins/select2-3.5.2/select2.min.js"></script>
     <script src="<?php echo $folder?>js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="<?php echo $folder?>js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
