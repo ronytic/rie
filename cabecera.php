@@ -40,7 +40,7 @@
                 $subm=$submenu->mostrar($_SESSION['NivelAcceso'],$m['CodMenu'])
                 ?>
                 <li>
-                    <a href="#"><i class="fa <?php echo $m['Icono']?>"></i> <span class="nav-label"><?php echo $m['Nombre']?></span> <?php if(count($subm)){?><span class="fa arrow"></span><?php }?></a>
+                    <a class="menuopcion" rel="<?=$m['CodMenu'];?>" href="#"><i class="fa <?php echo $m['Icono']?>"></i> <span class="nav-label"><?php echo $m['Nombre']?></span> <?php if(count($subm)){?><span class="fa arrow"></span><?php }?></a>
                     <ul class="nav nav-second-level collapse">
                         <?php foreach($subm as $sm){?>
                         <li><a href="<?php echo $folder?><?php echo $m['Url']?><?php echo $sm['Url']?>"><i class="fa <?php echo $sm['Icono']!=""?$sm['Icono']:'';//fa-arrow-right?>"></i><?php echo $sm['Nombre']?></a></li>
