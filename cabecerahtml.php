@@ -42,11 +42,14 @@ $car=array_shift($car);
         break;
 }*/
 
-
-include("class/menu.php");
-$menu=new menu;
-include("class/submenu.php");
-$submenu=new submenu;
+if(!defined("CLASEMENU")){
+    include("class/menu.php");
+    $menu=new menu;
+}
+if(!defined("CLASESUBMENU")){
+    include("class/submenu.php");
+    $submenu=new submenu;
+}
 ?>
 <!DOCTYPE html>
 <html>
