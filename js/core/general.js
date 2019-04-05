@@ -10,6 +10,7 @@ $(document).ready(function(){
     $(document).ajaxStop(function() {
 		$("#CuadroCargador").fadeOut('slow');
 	});
+    $(".menuopcion[rel="+(Cookies.get("Opcion"))+"]").parent().addClass("active");
 
 });
 
