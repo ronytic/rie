@@ -1,5 +1,6 @@
 <?php
 include_once("bd.php");
+define("CLASESUBMENU",1);
 class submenu extends bd{
 	var $tabla="submenu";
 	function mostrar($Nivel,$Menu){
