@@ -71,7 +71,9 @@ $(document).ready(function(){
                     <td>Titulo <input type="text" name="Titulo" class="form-control" value="Nuevo Producto"></td>
                 </tr>
 				<tr>
-                    <td colspan="2">Contenido del Mensaje <textarea name="Contenido" class="form-control">Tenemos en Stock Nuevos Productos puede pasar por nuestras Tiendas para poder obtener mayor información</textarea></td>
+                    <td colspan="2">Contenido del Mensaje <textarea name="Contenido" class="form-control" rows="5">Tenemos en Stock Nuevos Productos puede pasar por nuestras Tiendas para poder obtener mayor información</textarea>
+					<span class="badge badge-info">El contenido no debe de ser mayor a 120 caracteres</span>
+					</td>
                 </tr>
 				<tr>
                     <td>Titulo <input type="text" name="Url" class="form-control" value="http://www.bronison.com"></td>
