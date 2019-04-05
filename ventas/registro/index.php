@@ -1,5 +1,8 @@
 <?php
 require_once("../../login/check.php");
+//
+
+// setcookie("opcion","")
 // require_once("../../class/stock.php");
 // $stock=new stock;
 // $sal=$stock->obtener(4,3);
@@ -28,7 +31,9 @@ $titulo="Registro de Venta";
 $folder="../../";
 ?>
 <?php require_once($folder."cabecerahtml.php");?>
+<?php
 
+?>
 <script>
     let l=0;
     $(document).ready(function(){
