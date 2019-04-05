@@ -64,7 +64,7 @@ $submenu=new submenu;
 
     <link href="<?php echo $folder?>css/core/animate.css" rel="stylesheet">
     <link href="<?php echo $folder?>css/core/style.css" rel="stylesheet">
-    <link href="<?php echo $folder?>css/core/core.css?1" rel="stylesheet">
+    <link href="<?php echo $folder?>css/core/core.css?2" rel="stylesheet">
     <link href="<?php echo $folder?>css/core/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
 
