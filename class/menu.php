@@ -1,5 +1,6 @@
 <?php
 include_once("bd.php");
+define("CLASEMENU",1);
 class menu extends bd{
 	var $tabla="menu";
 	function mostrar($Nivel,$Posicion=""){
@@ -30,10 +31,16 @@ class menu extends bd{
 			case "4":{return $this->getRecords("Url='$Directorio' and  Cliente=1 and Activo=1","Orden");}break;
 		}
 	}
+	function obtenerOpcion($Nombre){
+		$r=$this->getRecords(" Nombre LIKE '%$Nombre%' and Activo=1 ","");
+		$r=array_shift($r);
+		return $r;
+	}
 	function mostrarMenuUrl($Url=""){
 		$this->campos=array('CodMenu','Nombre','Url','SubMenu','Imagen');
 		$Posicion=(!empty($Posicion))?" and Posicion='$Posicion'":"";
 		return $this->getRecords(" Url='$Url' and Activo=1 $Posicion","Orden");
+
 	}
 }
 ?>
