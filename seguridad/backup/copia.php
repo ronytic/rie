@@ -6,4 +6,6 @@ require_once("myphp-backup.php");
 $archivo=$backupDatabase->archivofinal;
 
 ?>
-<a href="<?=$archivo;?>" class="btn btn-danger" download>Descargar Archivo</a>
+<div class="text-center">
+    <a href="<?=$archivo;?>" class="btn btn-danger" download>Descargar Archivo</a>
+</div>
