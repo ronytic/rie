@@ -67,6 +67,9 @@ $submenu=new submenu;
     <link href="<?php echo $folder?>css/core/core.css?2" rel="stylesheet">
     <link href="<?php echo $folder?>css/core/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
+    <link href="<?php echo $folder?>js/plugins/select2-3.5.2/select2.css" rel="stylesheet">
+    <link href="<?php echo $folder?>js/plugins/select2-3.5.2/select2-bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $folder?>css/core/core.css?2" rel="stylesheet">
 
     <script src="<?php echo $folder?>js/core/jquery-2.1.1.js"></script>
     <script src="<?php echo $folder?>js/core/general.js"></script>
