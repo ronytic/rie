@@ -84,7 +84,7 @@ $acceso=new acceso;
 
 						<tr>
 							<td class="der resaltar" width="30%">Sucursal: </td>
-							<td class=""><span class="badge badge-danger"><?php echo ($s['Nombre']??"Todos")?></span></td>
+							<td class=""><span class="badge badge-danger"><?php echo (isset($s['Nombre'])?$s['Nombre']:"Todos")?></span></td>
 						</tr>
 						<tr>
 							<td class="der resaltar">Nivel Acceso: </td>

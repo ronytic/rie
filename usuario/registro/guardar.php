@@ -23,7 +23,7 @@ if(isset($_POST)){
 
     include_once("../../class/usuario.php");
     $usuario=new usuario;
-    // $res=$usuario->insertarRegistro($valores);
+    $res=$usuario->insertarRegistro($valores);
     if($res){
         $mensaje[]="El usuario fue registrado correctamente";
         $tipomensaje="success";
