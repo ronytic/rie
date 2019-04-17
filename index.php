@@ -10,6 +10,13 @@ $folder="";
   <div class="panel-body">
     <div class="text-center">
       <a href="lista/" class="btn btn-primary btn"> <i class="fa fa-file"></i> Ver Lista Actualizada de Productos </a>
+      <?php
+        if(file_exists("video/inicio.mp4") && $_SESSION['NivelAcceso']==4){
+          ?>
+            <video src="video/inicio.mp4" autoplay width="100%" class="img-rounded img-thumbnail" controls preload></video>
+          <?php
+        }
+      ?>
     </div>
     <br>
     <div class="row">
