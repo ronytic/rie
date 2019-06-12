@@ -1,6 +1,6 @@
 <?php
 $directory="rie/";		//Sub Directorio, Ej: "sistemacontable/"
-
+date_default_timezone_set('America/La_Paz');
 
 $CodigoNotificación='
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
