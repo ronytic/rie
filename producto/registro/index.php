@@ -10,6 +10,8 @@ include_once("../../class/marca.php");
 $marca=new marca;
 $marc=$marca->mostrarTodoRegistro("",1,"Nombre");
 $mar=todoLista($marc,"CodMarca","Nombre");
+$visible=array(0=>"No Visible",1=>"Visible");
+
 $titulo="Registro de Producto";
 $folder="../../";
 ?>
@@ -67,6 +69,10 @@ $folder="../../";
                 <tr>
                     <td class="text-right middle">Foto</td>
                     <td><input type="file" name="Foto" id="" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="text-right middle">Visible en lista</td>
+                    <td><?=campo("Lista","select",$visible,"form-control",1,"",1,array(),1);?></td>
                 </tr>
                 <tr>
                     <td></td>

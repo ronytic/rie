@@ -20,6 +20,7 @@ $mar=array_unshift_assoc($mar,"%","Todos");
 $titulo="Listado de Productos";
 $folder="../../";
 
+$visible=array(0=>"No Visible",1=>"Visible");
 
 
 ?>
@@ -37,7 +38,8 @@ $(document).ready(function(){
 		var Nombre=$("[name=Nombre]").val();
 		var Calidad=$("[name=Calidad]").val();
 		var Codigo=$("[name=Codigo]").val();
-		$.post("buscar.php",{'Nombre':Nombre,CodCategoria:CodCategoria,CodMarca:CodMarca,Calidad:Calidad,Codigo:Codigo},function(data){
+		var Lista=$("[name=Lista]").val();
+		$.post("buscar.php",{'Nombre':Nombre,CodCategoria:CodCategoria,CodMarca:CodMarca,Calidad:Calidad,Codigo:Codigo,Lista:Lista},function(data){
 			$("#respuesta").html(data);
 		});
     });
@@ -78,10 +80,10 @@ $(document).ready(function(){
 				                    <td>Nombre<input type="text" name="Nombre" class="form-control"></td>
 				                    <td>Calidad<input type="text" name="Calidad" class="form-control"></td>
 				                    <td>Código<input type="text" name="Codigo" class="form-control"></td>
-
+									<td class="text-right middle">Visible en lista<?=campo("Lista","select",$visible,"form-control",1,"",1,array(),1);?></td>
 								</tr>
 								<tr>
-								<td><input type="submit" value="Buscar" class="btn btn-primary"></td>
+									<td><input type="submit" value="Buscar" class="btn btn-primary"></td>
 								</tr>
 				            </table>
 			</div>

@@ -7,10 +7,10 @@ $CodMarca=$_POST['CodMarca'];
 $Nombre=$_POST['Nombre'];
 $Calidad=$_POST['Calidad'];
 $Codigo=$_POST['Codigo'];
-
+$Lista=$_POST['Lista'];
 include_once("../../class/producto.php");
 $producto=new producto;
-$su=$producto->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria' and CodMarca LIKE '$CodMarca' and Nombre LIKE '%$Nombre%' and Calidad LIKE '%$Calidad%' and Codigo LIKE '%$Codigo%'",1,"Nombre",1);
+$su=$producto->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria' and CodMarca LIKE '$CodMarca' and Nombre LIKE '%$Nombre%' and Calidad LIKE '%$Calidad%' and Codigo LIKE '%$Codigo%' and Lista = $Lista",1,"Nombre",1);
 //print_r($di);
 
 

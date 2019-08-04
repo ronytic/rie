@@ -12,6 +12,7 @@ if(isset($_POST)){
     $PrecioVentaUnitario=$_POST['PrecioVentaUnitario'];
     $PrecioVentaMayor=$_POST['PrecioVentaMayor'];
     $PrecioVentaEspecial=$_POST['PrecioVentaEspecial'];
+    $Lista=$_POST['Lista'];
 
     if(isset($_FILES['Foto']['name'])){
         if($_FILES['Foto']['name']!=""){
@@ -34,6 +35,7 @@ if(isset($_POST)){
                     "Foto"=>"'$Foto'",
                     "CodCategoria"=>"'$CodCategoria'",
                     "CodMarca"=>"'$CodMarca'",
+                    "Lista"=>"'$Lista'",
                     );
 
     include_once("../../class/producto.php");

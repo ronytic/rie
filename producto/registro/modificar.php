@@ -16,6 +16,8 @@ include_once("../../class/producto.php");
 $producto=new producto;
 $pro=$producto->mostrarTodoRegistro("CodProducto=$Cod",1);
 $pro=array_shift($pro);
+
+$visible=array(0=>"No Visible",1=>"Visible");
 $titulo="Modificar Datos de producto";
 $folder="../../";
 ?>
@@ -71,6 +73,11 @@ $folder="../../";
                     <td class="text-right middle">Precio de Venta Especial</td>
                     <td><input type="number" name="PrecioVentaEspecial" id="" class="form-control der" value="<?=$pro['PrecioVentaEspecial'];?>" min="0" step="0.01" required></td>
                 </tr>
+                <tr>
+                    <td class="text-right middle">Visible en lista</td>
+                    <td><?=campo("Lista","select",$visible,"form-control",1,"",1,array(),$pro['Lista']);?></td>
+                </tr>
+
                 <tr>
                     <td class="text-right middle">Foto</td>
                     <td><input type="file" name="Foto" id="" class="form-control">

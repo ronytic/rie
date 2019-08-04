@@ -66,7 +66,7 @@ $stockactual=new stock;
 						</thead>
 						<tbody>
 						<?php
-							$pro=$producto->mostrarTodoRegistro("CodCategoria=".$c['CodCategoria']." and CodMarca LIKE '$CodMarca' and Nombre LIKE '%$Nombre%'",1,"Nombre",1);
+							$pro=$producto->mostrarTodoRegistro("CodCategoria=".$c['CodCategoria']." and CodMarca LIKE '$CodMarca' and Nombre LIKE '%$Nombre%' and Lista=1",1,"Nombre",1);
 							if(count($pro)==0){
 
 								?>
