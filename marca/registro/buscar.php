@@ -6,7 +6,7 @@ $Nombre=$_POST['Nombre'];
 
 include_once("../../class/marca.php");
 $marca=new marca;
-$cat=$marca->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Nombre");
+$cat=$marca->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Orden");
 //print_r($di);
 
 
@@ -16,6 +16,8 @@ $cat=$marca->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Nombre");
     	<tr>
         	<th width="10">N</th>
         	<th width="">Nombre</th>
+        	<th width="">Orden</th>
+
             <th width="50"></th>
             <th width="50"></th>
 
@@ -39,6 +41,7 @@ $cat=$marca->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Nombre");
         	<tr>
             	<td><?php echo $i;?></td>
             	<td><?php echo ($d['Nombre'])?></td>
+				<td><?php echo ($d['Orden'])?></td>
 
                 <td>
                 	<a href="modificar.php?Cod=<?php echo $d['CodMarca']?>"  class="btn btn-primary btn-xs " title="Modificar" rel="<?php echo $d['CodMarca']?>">

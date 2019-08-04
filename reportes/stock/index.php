@@ -4,7 +4,7 @@ include_once("../../login/check.php");
 
 include_once("../../class/categoria.php");
 $categoria=new categoria;
-$cate=$categoria->mostrarTodoRegistro("",1,"Nombre");
+$cate=$categoria->mostrarTodoRegistro("",1,"Orden");
 $cat=todoLista($cate,"CodCategoria","Nombre");
 $cat=array_unshift_assoc($cat,"%","Todos");
 // echo "<pre>";
@@ -12,7 +12,7 @@ $cat=array_unshift_assoc($cat,"%","Todos");
 // echo "</pre>";
 include_once("../../class/marca.php");
 $marca=new marca;
-$marc=$marca->mostrarTodoRegistro("",1,"Nombre");
+$marc=$marca->mostrarTodoRegistro("",1,"Orden");
 $mar=todoLista($marc,"CodMarca","Nombre");
 $mar=array_unshift_assoc($mar,"%","Todos");
 
@@ -39,7 +39,8 @@ $(document).ready(function(){
 		$.post("buscar.php",{'Nombre':Nombre,CodCategoria:CodCategoria,CodMarca:CodMarca},function(data){
 			$("#respuesta").html(data);
 		});
-    }).submit();
+    })
+	//.submit();
 
 
 });

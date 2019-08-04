@@ -22,7 +22,7 @@ $sucursal=new sucursal;
 $suc=$sucursal->mostrarTodoRegistro("",1,"Nombre");
 ?>
 <?php
-	$cat=$categoria->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria'",1,"Nombre");
+	$cat=$categoria->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria'",1,"Orden");
 	foreach($cat as $c){
 		?>
 		<div class="panel panel-default">

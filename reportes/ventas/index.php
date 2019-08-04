@@ -20,7 +20,7 @@ $cli=array_unshift_assoc($cli,"%","Todos");
 // echo "</pre>";
 include_once("../../class/marca.php");
 $marca=new marca;
-$marc=$marca->mostrarTodoRegistro("",1,"Nombre");
+$marc=$marca->mostrarTodoRegistro("",1,"Orden");
 $mar=todoLista($marc,"CodMarca","Nombre");
 $mar=array_unshift_assoc($mar,"%","Todos");
 

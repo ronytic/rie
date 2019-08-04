@@ -21,6 +21,10 @@ $folder="../../";
                     <td><input type="text" name="Nombre" id="" class="form-control" required autofocus value="<?=$mar['Nombre'];?>"></td>
                 </tr>
                 <tr>
+                    <td class="text-right middle">Orden</td>
+                    <td><input type="number" name="Orden" id="" class="form-control" required  value="<?=$mar['Orden'];?>"></td>
+                </tr>
+                <tr>
                     <td></td>
                     <td class="middle"><input type="submit" value="Guardar" class="btn btn-primary"></td>
                 </tr>

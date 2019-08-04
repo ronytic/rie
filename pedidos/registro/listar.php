@@ -9,7 +9,7 @@ $suc=array_unshift_assoc($suc,"%","Todos");
 
 include_once("../../class/categoria.php");
 $categoria=new categoria;
-$cate=$categoria->mostrarTodoRegistro("",1,"Nombre");
+$cate=$categoria->mostrarTodoRegistro("",1,"Orden");
 $cat=todoLista($cate,"CodCategoria","Nombre");
 $cat=array_unshift_assoc($cat,"%","Todos");
 // echo "<pre>";

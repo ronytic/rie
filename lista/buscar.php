@@ -19,7 +19,7 @@ include_once("../class/stock.php");
 $stockactual=new stock;
 ?>
 <?php
-	$cat=$categoria->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria'",1,"Nombre");
+	$cat=$categoria->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria'",1,"Orden");
 	foreach($cat as $c){
 		?>
 		<div class="panel panel-default">

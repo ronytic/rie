@@ -12,11 +12,11 @@ $suc=todoLista($sucu,"CodSucursal","Nombre");
 
 include_once("../../class/categoria.php");
 $categoria=new categoria;
-$cate=$categoria->mostrarTodoRegistro("",1,"Nombre");
+$cate=$categoria->mostrarTodoRegistro("",1,"Orden");
 $cat=todoLista($cate,"CodCategoria","Nombre");
 include_once("../../class/marca.php");
 $marca=new marca;
-$marc=$marca->mostrarTodoRegistro("",1,"Nombre");
+$marc=$marca->mostrarTodoRegistro("",1,"Orden");
 $mar=todoLista($marc,"CodMarca","Nombre");
 
 $titulo="Registro de Traspaso de Productos";

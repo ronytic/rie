@@ -6,7 +6,7 @@ $Nombre=$_POST['Nombre'];
 
 include_once("../../class/categoria.php");
 $categoria=new categoria;
-$cat=$categoria->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Nombre",1);
+$cat=$categoria->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Orden",1);
 //print_r($di);
 
 
@@ -16,6 +16,7 @@ $cat=$categoria->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Nombre",1);
     	<tr>
         	<th width="10">N</th>
         	<th width="">Nombre</th>
+			<th width="">Orden</th>
             <th width="50"></th>
             <th width="50"></th>
 
@@ -39,6 +40,7 @@ $cat=$categoria->mostrarTodoRegistro("Nombre LIKE '$Nombre%'",1,"Nombre",1);
         	<tr>
             	<td><?php echo $i;?></td>
             	<td><?php echo ($d['Nombre'])?></td>
+            	<td><?php echo ($d['Orden'])?></td>
 
                 <td>
                 	<a href="modificar.php?Cod=<?php echo $d['CodCategoria']?>"  class="btn btn-primary btn-xs " title="Modificar" rel="<?php echo $d['CodCategoria']?>">
