@@ -27,6 +27,14 @@ $cliente=new cliente;
 $clie=$cliente->mostrarTodoRegistro("",1,"Apellidos,Nombres");
 $cli=todoLista($clie,"CodCliente","Ci,Apellidos,Nombres","  ");
 
+
+include_once("../../class/producto.php");
+$producto=new producto;
+$prod=$producto->mostrarTodoRegistro("",1,"");
+$prod=todoLista($prod,"CodProducto","Nombre,Codigo"," - ");
+
+
+
 $titulo="Registro de Venta";
 $folder="../../";
 ?>
@@ -285,7 +293,7 @@ $folder="../../";
                     <td class="small">
                         <?=campo("CodCategoria","select",$cat,"form-control input-sm",1,"",0,array(),0,1);?>
                         <?=campo("CodMarca","select",$mar,"form-control",1,"",0,array(),0,1);?>
-                        <?=campo("CodProducto","select",array(),"form-control",1,"",0,array(),0,1);?>
+                        <?=campo("CodProducto","select",$prod,"form-control",1,"",0,array(),0,1);?>
                         <table class="table table-bordered">
                             <tr>
                                 <td class="der resaltar" width="40%">Color: </td>
