@@ -21,6 +21,7 @@ include_once("../../class/sucursal.php");
 $sucursal=new sucursal;
 $suc=$sucursal->mostrarTodoRegistro("",1,"Nombre");
 ?>
+
 <?php
 	$cat=$categoria->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria'",1,"Orden");
 	foreach($cat as $c){
@@ -90,6 +91,10 @@ $suc=$sucursal->mostrarTodoRegistro("",1,"Nombre");
 							<?php
 							}
 							$i=0;
+							$suma=[];
+							foreach($suc as $s){
+								$suma[$s['CodSucursal']]=0;
+							}
 							foreach($pro as $d){$i++;
 								$c=$categoria->mostrarTodoRegistro("CodCategoria=".$d['CodCategoria']);
 								$c=array_shift($c);
@@ -103,7 +108,9 @@ $suc=$sucursal->mostrarTodoRegistro("",1,"Nombre");
 									$st=array_shift($st);
 									$stock[$s['Nombre']]=(int)$st['Stock'];
 									$totalstock+=(int)$st['Stock'];
+									$suma[$s['CodSucursal']]+=$stock[$s['Nombre']];
 								}
+
 								// print_r($st);
 
 								// $stock=0;
@@ -175,7 +182,24 @@ $suc=$sucursal->mostrarTodoRegistro("",1,"Nombre");
 								<?php
 							}?>
 						</tbody>
+						<tr>
+						<td colspan="5" class="der resaltar">Total</td>
+						<?php
+						$ttt=0;
+						foreach($suc as $s){
+							$ttt+=$suma[$s['CodSucursal']];
+							?>
+							<td class="der resaltar">
+							<?=$suma[$s['CodSucursal']];?>
+							</td>
+							<?php
+						}
+						?>
+						<td  class="der resaltar"><?=$ttt;?></td>
+						</tr>
 					</table>
+
+
 					</div>
 				</div>
 

@@ -24,6 +24,11 @@ $folder="../../";
 
 ?>
 <?php include_once($folder."cabecerahtml.php");?>
+<style type="text/css">
+.badge{
+	cursor:pointer;
+}
+</style>
 <script>
 $(document).ready(function(){
 	$(document).ajaxStart(function() {
@@ -40,10 +45,46 @@ $(document).ready(function(){
 			$("#respuesta").html(data);
 		});
     })
-	//.submit();
+	.submit();
 
+	$('#Disponible').click(function(){
+		if($(this).attr("rel")==1){
+			$(this).attr("rel",0)
+			$(this).removeClass('badge-primary');
+			$('td  .badge-primary').parent().parent().fadeOut();
+		}else{
+			$(this).attr("rel",1)
+			$(this).addClass('badge-primary');
+			$('td  .badge-primary').parent().parent().fadeIn();
+		}
+	});
+
+	$('#Comprar').click(function(){
+		if($(this).attr("rel")==1){
+			$(this).attr("rel",0)
+			$(this).removeClass('badge-warning');
+			$('td  .badge-warning').parent().parent().fadeOut();
+		}else{
+			$(this).attr("rel",1)
+			$(this).addClass('badge-warning');
+			$('td  .badge-warning').parent().parent().fadeIn();
+		}
+	});
+
+	$('#Agotado').click(function(){
+		if($(this).attr("rel")==1){
+			$(this).attr("rel",0)
+			$(this).removeClass('badge-danger');
+			$('td  .badge-danger').parent().parent().fadeOut();
+		}else{
+			$(this).attr("rel",1)
+			$(this).addClass('badge-danger');
+			$('td  .badge-danger').parent().parent().fadeIn();
+		}
+	});
 
 });
+
 </script>
 <?php include_once($folder."cabecera.php");?>
 <div class="panel">
@@ -67,7 +108,11 @@ $(document).ready(function(){
 
 
         </form>
-
+		<div class="pull-right">
+<span class="badge badge-primary" id="Disponible" rel="1">Disponible</span>
+<span class="badge badge-warning" id="Comprar" rel="1">Comprar</span>
+<span class="badge badge-danger" id="Agotado" rel="1">Agotado</span>
+</div>
 	</div>
 </div>
 <div class="panel">
