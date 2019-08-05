@@ -29,7 +29,9 @@
     <script src="<?php echo $folder?>js/plugins/busqueda/busqueda.js"></script>
     <!-- <script src="<?php echo $folder?>js/plugins/pace/pace.min.js"></script>-->
 
-
+    <?php
+        if(!isset($_SESSION['AccessSystem'])){die('System Error');}
+    ?>
 </body>
 
 </html>

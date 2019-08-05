@@ -15,7 +15,7 @@ include_once("../../class/marca.php");
 $marca=new marca;
 $marc=$marca->mostrarTodoRegistro("",1,"Orden");
 $mar=todoLista($marc,"CodMarca","Nombre");
-
+if(!isset($_SESSION['AccessSystem'])){die('System Error');}
 $titulo="Registro de Ingreso de Producto";
 $folder="../../";
 ?>

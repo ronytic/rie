@@ -13,7 +13,7 @@ $producto=new producto;
 $su=$producto->mostrarTodoRegistro("CodCategoria LIKE '$CodCategoria' and CodMarca LIKE '$CodMarca' and Nombre LIKE '%$Nombre%' and Calidad LIKE '%$Calidad%' and Codigo LIKE '%$Codigo%' and Lista = $Lista",1,"Nombre",1);
 //print_r($di);
 
-
+if(!isset($_SESSION['AccessSystem'])){die('System Error');}
 include_once("../../class/categoria.php");
 $categoria=new categoria;
 include_once("../../class/marca.php");

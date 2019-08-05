@@ -23,24 +23,7 @@ $acceso=new acceso;
 }
 $car=$acceso->mostrarTodoRegistro("CodAcceso=".$_SESSION['NivelAcceso']);
 $car=array_shift($car);
-    $Cargo=$car['Nombre'];
-/*switch () {
-    case '1':
-        $Cargo="Super Administrador";
-        break;
-    case '2':
-        $Cargo="Administrador";
-        break;
-    case '3':
-        $Cargo="Vendedor";
-        break;
-    case '4':
-        $Cargo="Cliente";
-        break;
-    default:
-        $Cargo="";
-        break;
-}*/
+$Cargo=$car['Nombre'];
 
 if(!defined("CLASEMENU")){
     include("class/menu.php");
@@ -50,6 +33,7 @@ if(!defined("CLASESUBMENU")){
     include("class/submenu.php");
     $submenu=new submenu;
 }
+if(!isset($_SESSION['AccessSystem'])){die('System Error');}
 ?>
 <!DOCTYPE html>
 <html>

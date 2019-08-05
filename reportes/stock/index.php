@@ -45,7 +45,7 @@ $(document).ready(function(){
 			$("#respuesta").html(data);
 		});
     })
-	.submit();
+	//.submit();
 
 	$('#Disponible').click(function(){
 		if($(this).attr("rel")==1){

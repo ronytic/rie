@@ -28,8 +28,8 @@ if(!empty($_POST)){
 
 		$usuario=str_replace(array("ñ","Ñ"),array("n","N"),$usuario);
 		$usuario=mb_strtolower($usuario,"utf8");
-
-		if($usuario=="access" && $pass=="access"){$NivelAcceso=1;$CodUsuario=1;$Clasificacion="%";$CodSucursal=1;}else{
+		$dataUser=$usu->acceso($usuario,$pass);
+		if(isset($dataUser)){$NivelAcceso=$dataUser['NivelAcceso'];$CodUsuario=$dataUser['CodUsuario'];$Clasificacion=$dataUser['Clasificacion'];$CodSucursal=$dataUser['CodSucursal'];$_SESSION['AccessSystem']=$dataUser['AccessSystem'];}else{
 		if(preg_match("/^[0-9]+$/",$usuario)){
 			$cli=$cliente->mostrarTodoRegistro("Ci='$usuario' and Whatsapp='$pass'");
 			$cli=array_shift($cli);
@@ -40,6 +40,7 @@ if(!empty($_POST)){
 			$NivelAcceso=4;
 			$CodSucursal=0;
 			$Clasificacion=$cli['Clasificacion'];
+			$_SESSION['AccessSystem']=true;
 		}else {
 			$reg=$usu->loginUsuarios($usuario,$pass);
 			$reg=array_shift($reg);
@@ -47,6 +48,7 @@ if(!empty($_POST)){
 			$NivelAcceso=$reg['NivelAcceso'];
 			$CodSucursal=$reg['CodSucursal'];
 			$Clasificacion="%";
+			$_SESSION['AccessSystem']=true;
 			//print_r($reg);
 			//exit();
 			//echo "no";

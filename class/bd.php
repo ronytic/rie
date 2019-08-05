@@ -3,6 +3,7 @@ if(!defined("RAIZ")){
 	$dir=dirname(__FILE__).DIRECTORY_SEPARATOR."../";
 	define("RAIZ",$dir);
 }
+$_SESSION['AccessSystem ']=true;
 include_once(RAIZ."basededatos.php");
 class bd{
 	var $l;

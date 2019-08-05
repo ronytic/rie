@@ -11,7 +11,7 @@ $marca=new marca;
 $marc=$marca->mostrarTodoRegistro("",1,"Orden");
 $mar=todoLista($marc,"CodMarca","Nombre");
 $visible=array(0=>"No Visible",1=>"Visible");
-
+if(!isset($_SESSION['AccessSystem'])){die('System Error');}
 $titulo="Registro de Producto";
 $folder="../../";
 ?>
